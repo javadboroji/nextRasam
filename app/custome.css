@@ -1,0 +1,1724 @@
+:root{
+    --color-fff:#fff;
+    --blue-bg-gradient: linear-gradient(90deg, #1E6AFD 0%, #3579FD 50.52%, #4081FD 77.6%, #4B88FD 100%);
+    --bg-light:rgba(225, 236, 254, 0.40);
+    --text-black:#1C1C1C;
+    --grey-600: #909090;
+    --grey-900:#424242;
+    --blue-50:#E9F0FF;
+    --blue-500: #1E6AFD;
+    --blue-400:#4B88FD;
+    --pumpkin-600: #F86F03;
+    --grey-500:#9E9E9E ;
+    --gray-300: #E0E0E0;
+    --gray-50:#FAFAFA;
+    --grey-700: #707070;
+    --grey-100: #E1E1E1;
+}
+@font-face {
+    font-family: 'IRANSans(FaNum)';
+    src: url('./assets/Font/IRANSANS\(FANUM\).TTF');
+  }
+  @font-face {
+    font-family: 'IranSans';
+    src: url('./assets/Font/IranSans/IRANSansWeb.eot');
+    src: url('./assets/Font/IranSans/IRANSansWeb.eot?#iefix') format('embedded-opentype'),
+        url('./assets/Font/IranSans/IRANSansWeb_Medium.woff2') format('woff2'),
+        url('./assets/Font/IranSans/IRANSansWeb.woff') format('woff'),
+        url('./assets/Font/IranSans/IRANSansWeb.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+  body{
+    font-family: 'IRANSans(FaNum)' !important ;
+  }
+.header-bg{
+    background: var(--color-fff);
+box-shadow: 0px 2px 6px 0px rgba(87, 87, 87, 0.15);
+
+}
+.nav-item.custom{
+    padding-bottom: 0.5rem;
+}
+.nav-item.custom:hover{
+    border-bottom: 2px solid var(--blue-500);
+}
+.banner-main{
+    position: relative;
+    width: 100%;
+    height: 100%;
+   min-height: 52rem;
+ 
+}
+.nav-link.active {
+    color: var(--blue-500);
+    border-bottom: 2px solid var(--blue-500);
+}
+.dropdown-menu{
+top: 100%;
+right: 0;
+}
+.dropdown-menu li a{
+    color: var(--text-black) !important;
+
+}
+.dropdown-menu li:hover a{
+    color: var(--blue-500) !important; 
+}
+.nav-item.sub-menu{
+    position: relative;
+}
+.nav-item.sub-menu:hover .dropdown-menu{
+    display: block ;
+}
+.nav-link.menu-text ,.navbar-brand span{
+    color: var(--text-black);
+text-align: justify;
+font-family: 'IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+}
+.nav-item.custom:hover a{
+    color: var(--blue-500);
+}
+.banner-main::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../public/video.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+    min-height: 20rem;
+    filter: brightness(0.5);
+}
+.banner-content .title{
+color:var(--color-fff);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 40px; /* 83.333% */
+}
+.banner-content .sub-title{
+    color:var(--color-fff);
+    text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: 40px; /* 166.667% */
+padding: 2rem 0;
+
+}
+.banner-content .description{
+    color:var(--color-fff);
+    text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px; /* 250% */
+
+}
+.btn-blue-gradient{
+ color: var(--color-fff);
+text-align: center;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 26px; /* 185.714% */
+text-transform: uppercase;
+border-radius: 8px;
+ background: var(--blue-bg-gradient);
+ padding: 0.5rem 1rem;
+ width: 7rem;
+ outline: none;
+ border: 0;
+ margin-top: 2rem;
+}
+
+.swiper-button-prev:after, .swiper-button-next:after{
+    font-size: 24px !important;
+    color: var(--grey-600) !important;
+}
+.last-article .swiper-rtl .swiper-button-prev,.last-article .swiper-rtl .swiper-button-next{
+    background: var(--color-fff);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    top: 20% ; 
+
+}
+/**==============================================
+ *                Advantage
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+ .advantage{
+    width: 100%;
+    height: 100%;
+    background: var(--bg-light);
+    padding: 2rem 0;
+ }
+ .card-advantage{
+    background: var(--color-fff);
+    border-radius: 1.5rem;
+    padding: 1.5rem 2rem;
+    height: 18rem;
+    transition: ease-in-out 0.5s all;
+ }
+ .card-advantage:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+ }
+ .advantage .icon{
+    background: var(--blue-50);
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    position: relative;
+ }
+
+ .advantage .icon img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+ }
+ .advantage .title{
+color: var(--text-black);
+text-align: center;
+padding: 3rem 0;
+font-family: 'IRANSans(FaNum)';
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: 50px; /* 138.889% */
+ }
+ .card-advantage .title{
+color: var(--grey-600);
+text-align: center;
+font-family: 'IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 35.5px; /* 221.875% */
+padding: 1rem 0;
+ }
+ .card-advantage .counter{
+color: var(--grey-900);
+text-align: center;
+font-family: 'IRANSans(FaNum)';
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 35.5px; /* 73.958% */
+padding-top: 2rem;
+ }
+
+ /**==============================================
+  *                Whay Rasam
+  *  
+  *  
+  *  
+  *  
+  *=============================================**/
+  .whay-main{
+    width: 100%;
+    padding: 2rem 0;
+  }
+  .whay-title{
+color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 36px;
+font-style: normal;
+font-weight: 700;
+line-height: 50px; /* 138.889% */
+padding-bottom: 3rem;
+
+  }
+  .whay-sub-title{
+    color: var(--blue-500);
+text-align: right;
+font-family:' IRANSans(FaNum)';
+font-size: 24px;
+font-style: normal;
+font-weight: 400;
+line-height: 40px; /* 166.667% */
+padding-bottom: 1.5rem;
+  }
+  .whay-description ,.description{
+color: var(--grey-900);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 32px; /* 200% */
+  }
+  .col-image-box{}
+  .col-image-box img{}
+
+/**==============================================
+ *                property
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.property-card{
+    background: var(--color-fff);
+    border-radius: 0.8rem;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 15rem;
+    transition: ease-in-out all 0.5s;
+}
+.property-card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.property-card .icon{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.property-card .icon img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    
+}
+.property-card .title ,.card-title{
+color: var(--text-black);
+text-align: center;
+font-family: 'IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 35.5px; /* 221.875% */
+padding: 1rem 0;
+}
+
+.property-card .description ,.card-description{
+    color: var(--grey-600);
+}
+.property-card.hover .title,.property-card.hover  .description{
+    color: var(--color-fff);
+}
+/**==============================================
+ *                OurTool
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.our-tool{
+    padding: 3rem 0;
+    width: 100%;
+}
+.our-tool .title{
+    padding-bottom: 1.5rem;
+    text-align: center;
+}
+.our-tool .description{
+    text-align: center;
+    display: block;
+    padding-bottom: 2rem;
+}
+.our-tool-img-box{
+    background: var(--blue-50);
+    border-radius: 0.8rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+    padding: 1rem;
+}
+.our-tool-img-box img{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    object-fit: contain;
+    width: 100%;
+    height: -webkit-fill-available;
+
+}
+.swiper-box{
+    margin-top: 2rem;
+}
+.swiper-box .swiper-slide {
+    width: 17% !important;
+    padding: 2rem 0;
+    height: 25rem;
+}
+.hover-bg-color:hover {
+    background-color: var(--hover-bg-color, transparent);
+    transition: background-color 0.3s ease; /* Optional: Add a smooth transition effect */
+  }
+ 
+
+/**==============================================
+ *                Article
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.last-article .thumbnail ,.category .thumbnail ,.favorites .thumbnail{
+    position: relative;
+    width: 100%;
+    border-radius: 0.8rem 0.8rem 0 0;
+    padding-top: 74%;
+    overflow: hidden;
+}
+.last-article .thumbnail img ,.category .thumbnail img ,.favorites .thumbnail img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.last-article  .title ,.category  .title,.favorites  .title{
+    color: var(--text-black);
+    text-align: justify;
+    font-family: 'IRANSans(FaNum)';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    padding:  0;
+    margin-bottom: 0;
+    overflow: hidden;
+    display: -webkit-box; 
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.last-article .description ,.category .description ,.favorites .description{
+    overflow: hidden;
+    display: -webkit-box; 
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 0.9rem;
+}
+.last-article .date ,.category .date ,.favorites .date{
+    color: var(--pumpkin-600);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 175%; /* 24.5px */
+}
+.like-count ,.comment-count {
+    color: var(--grey-600);
+    text-align: right;
+    font-family: 'IRANSans(FaNum)';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 185.714% */
+    text-transform: uppercase;
+}
+.card-more-link{
+    color: var(--blue-500);
+text-align: center;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 26px; /* 185.714% */
+text-transform: uppercase;
+text-decoration: none;
+padding: 1rem 1.5rem;
+width: fit-content;
+
+}
+.card-more-link img{
+    margin-right: 1rem;
+}
+.article-card-info{
+    background: var(--color-fff);
+    padding: 0.8rem ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  height: 13rem;
+    border-radius: 0 0 0.8rem 0.8rem;
+
+}
+.category.article-card {
+    border: 1px solid var(--grey-100);
+    border-radius: 12px;
+}
+.singleThumbnail-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding-top: 42%;
+    border-radius: 8px;
+}
+.singleThumbnail{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.single-content p{
+ color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 175%; /* 24.5px */
+}
+.comment-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.comment-list li{
+    width: 100%;
+    flex: 1;
+}
+.comment-list li ul.nested{
+    padding-right: 1rem;
+}
+.comment-list-title{
+    color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 50px; /* 208.333% */
+padding-bottom: 8px;
+border-bottom: 1px solid var(--grey-100);
+margin: 1.5rem 0;
+}
+.comment-list  .avatar{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+    background: var(--blue-50);
+    padding: 12px;
+  
+}
+.comment-list .avatar img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.comment-list .username{
+    color: var(--grey-900);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 50px; /* 312.5% */
+padding-right: 0.8rem;
+}
+.comment-list .date{
+    margin: auto auto auto 0;
+}
+.comment-list .date span{
+    margin-right: 8px;
+    color: var(--grey-600);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 175%; /* 24.5px */
+}
+.commment-info-right{
+    width: 20%;
+}
+.comment-list .btn-reply{
+    border: 0;
+    background: none;
+    outline: none;
+    color: var(--grey-600);
+text-align: center;
+font-family:' IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 26px; /* 185.714% */
+text-transform: uppercase;
+}
+.comment-description{
+    color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 175%; /* 24.5px */
+}
+.comment-border{
+    border-bottom: 1px solid var(--grey-100);
+}
+.comment-list .replies{
+    padding-right: 3rem;
+}
+.reply-box{
+    position: relative;
+    margin-bottom: 4rem;
+}
+.btn-reply-close{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px 1rem;
+    border: 1px solid var(--grey-100);
+    border-radius: 8px;
+    background: none;
+    outline: none;
+    color: var(--blue-400);
+    text-align: center;
+    font-family:' IRANSans(FaNum)';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 185.714% */
+    text-transform: uppercase;
+}
+/**==============================================
+ *                Footer
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+ footer{
+    background: var(--color-fff);
+    width: 100%;
+    padding: 3rem 0;
+ }
+footer .companyName{
+    color: var(--text-black);
+    text-align: justify;
+    font-family: 'IRANSans(FaNum)';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 157%; /* 25.12px */
+}
+footer .header{
+    padding-bottom: 3rem;
+}
+footer .menu-title{
+    color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 157%; /* 31.4px */
+display: block;
+width: 100%;
+border-bottom: 1px solid  #E1E1E1;
+}
+footer .contact .icon{
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+    background: var(--blue-400);
+}
+footer .contact .icon img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+footer .contact  .item{
+   margin-bottom: 1rem;
+}
+footer .contact  .item .value{
+    color: var(--grey-900);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
+}
+.footer-menu{
+    display: flex;
+    flex-direction: column;
+    max-height: 14rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+
+}
+.footer-menu-item{
+    list-style: none;
+    padding-bottom: 2rem;
+
+}
+.footer-menu-item a{
+    color: var(--grey-900);
+    text-align: right;
+    font-family: 'IRANSans(FaNum)';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 157%; /* 25.12px */
+    text-decoration: none;
+}
+/**==============================================
+ *                Contact
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.contact-page{
+    background: var(--blue-50);
+    width: 100%;
+  
+    padding: 5rem 0;
+}
+.contact-page .item{
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+}
+.contact-page .item .icon{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--blue-500);
+    position: relative;
+    overflow: hidden;
+    transition: ease-in-out all 0.3s;
+}
+.contact-page .item .icon:hover{
+    background: var(--pumpkin-600);
+    cursor: pointer;
+}
+.contact-page .item .icon img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    object-fit: contain;
+}
+.contact-page .item .value span:first-child{
+    color: var(--grey-900);
+font-family: 'IRANSans(FaNum)';
+font-size: 20px;
+font-style: normal;
+font-weight: 500;
+line-height: 28px;
+}
+.contact-page .item .value span{
+    font-size: 1rem;
+}
+.contact-page .title{
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'IRANSans(FaNum)';
+}
+.contact-page .info{
+    background: var(--color-fff);
+    padding: 1.5rem;
+}
+.about-thumbnail{
+    position: relative;
+    width: 100%;
+    height: 90%;
+    padding-top: 110%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.about-thumbnail img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.about{
+    margin: 3rem 0;
+}
+.about-title{
+  
+    padding-bottom: 0;
+}
+/**==============================================
+ *                Login
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.login-bg{
+    background: linear-gradient(183deg, rgba(185, 209, 254, 0.23) -18.73%, rgba(236, 239, 246, 0.66) 49.03%, #FFF 103.45%);
+    min-height: 99vh;
+    padding: 4rem 0;
+
+}
+/* .login-bg::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+} */
+.login-form-container{
+    background: var(--color-fff);
+
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px 0px rgba(87, 87, 87, 0.15);
+    width: 90%;
+    margin: auto;
+    margin: 4rem;
+}
+.login-form-container .title{
+    color: var(--text-black);
+text-align: center;
+font-family: 'IRANSans(FaNum)';
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: 50px; /* 156.25% */
+text-align: center;
+display: block;
+margin-bottom: 3rem;
+}
+input#password ,input#username{
+color: var(--grey-500);
+text-align: right;
+font-feature-settings: 'rclt' off;
+font-family: 'IRANSans(FaNum)';
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px; /* 150% */
+padding: 0.8rem;
+border-radius: 8px;
+border: 1px solid var(--gray-300);
+background: var(--color-fff);
+
+}
+input:focus-visible{
+    outline: none;
+}
+.login-bg input#username,input#password{
+    width: 100%;
+    position: relative;
+    padding-right: 2.2rem;
+}
+.input-icon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.input-warning{
+    color: red;
+    font-size: 10px;
+}
+.form-check{
+    width: fit-content;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.form-check label{
+    padding-right: 1.8rem;
+}
+.form-check input{
+    z-index: 99;
+}
+
+.form-footer{
+border-top: 1px solid var(--gray-50);
+width: 100%;
+display: flex;
+justify-content: center;
+margin-top: 2rem;
+padding: 1rem;
+}
+.form-footer span{
+    color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 26px; /* 185.714% */
+text-transform: uppercase;
+}
+.form-footer a{
+    text-decoration: none;
+}
+/**==============================================
+ *                Breadcrumb
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+ .breadcrumb-ul{
+    display: flex;
+    margin-top: 6rem;
+ }
+.breadcrumb-item{
+    list-style: none;
+    position: relative;
+}
+.breadcrumb-item::after{
+    content: '>';
+    position: absolute;
+    top: 3px;
+    left: 0;
+}
+.breadcrumb-item:last-child::after{
+    display: none;
+}
+.breadcrumb-item::before{
+    display: none;
+}
+.breadcrumb-item a{
+    color: var(--grey-700);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 21px */
+padding: 0 1rem ;
+text-decoration: none;
+}
+.breadcrumb-item.active a{
+    color: var(--blue-500);
+}
+/**==============================================
+ *              Ghallery
+ *=============================================**/
+.ghallery{
+    background: var(--bg-light);
+    padding: 4rem 0;
+}
+.ghallery h1{
+    color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: 50px; /* 156.25% */
+}
+.ghallery-thumbnail{
+    position: relative;
+    width: 100%;
+    padding-top: 130%;
+    overflow: hidden;
+    border-radius: 12px;
+}
+.ghallery-thumbnail img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.ghallery .swiper-rtl .swiper-button-prev,.ghallery  .swiper-rtl .swiper-button-next{
+    top: 50% !important;
+    background: var(--color-fff);
+    border-radius: 50%;
+    padding: 0 1.2rem;
+}
+.mySwiper.ghallery{
+background: transparent;
+}
+
+/**==============================================
+ *                Categorey
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.category-search{
+    position: relative;
+    width: 100%;
+}
+.category h2{
+    color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 32px; /* 160% */
+}
+.category-search input{
+    border: 1px solid var(--gray-300);
+    color: var(--gray-500, #9E9E9E);
+    font-family: 'IRANSans(FaNum)';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; /* 150% */
+    padding: 0.5rem 1.4rem;
+    width: 100%;
+    border-radius: 8px;
+}
+.category-search img{
+    position: absolute;
+    right: 0;
+    top: 8px;
+}
+.category-cat p{
+    color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 50px; /* 208.333% */
+border-bottom: 1px solid var(--grey-100);
+margin-top: 1rem;
+}
+.category-cat li{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+   position: relative;
+}
+.category-cat li::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--blue-500);
+    top: 45%;
+  
+}
+.category-cat li a{
+    color: var(--text-black);
+    text-decoration: none;
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 25px; /* 178.571% */
+padding: 0.5rem;
+padding-right: 12px;
+}
+/**==============================================
+ *               favorites
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.favorites{
+    background: var(--bg-light);
+    padding: 4rem 0;
+}
+.favorites  .swiper-rtl .swiper-button-prev,.favorites .swiper-rtl .swiper-button-next{
+    top: 20%;
+    background: var(--color-fff);
+    border-radius: 50%;
+    padding: 0 1.3rem;
+}
+/**==============================================
+ *                Single
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.training{
+    min-height: 50rem;
+}
+.comment .input{
+    color: var(--grey-500);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px; /* 150% */
+padding: 0.8rem;
+border-radius: 8px;
+border: 1px solid var(--gray-300);
+background: var(--color-fff);
+width: 98%;
+}
+.comment-title{
+ color: var(--text-black);
+text-align: right;
+font-family:' IRANSans(FaNum)';
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 50px; /* 208.333% */
+}
+.btn-outline-blue{
+    background: var(--color-fff);
+    border: 1px solid var(--blue-500);
+    padding: 0.5rem 2rem;
+    color: var(--blue-400);
+    text-align: center;
+    font-family: 'IRANSans(FaNum)';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px; /* 185.714% */
+    text-transform: uppercase;
+    border-radius: 8px;
+    float: left;
+    margin-top: 0.5rem;
+}
+.input-larg{
+    width: 99% !important;
+    min-height: 10rem;
+    margin-top: 0.5rem;
+}
+
+.single-title{
+    color: var(--text-black);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 32px;
+font-style: normal;
+font-weight: 700;
+line-height: 50px; /* 156.25% */
+}
+.single-time ,.single-time,.tags .icons .count{
+    color: var(--grey-600);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 175%; /* 24.5px */
+}
+
+.tags .icons{
+    display: flex;
+    justify-content:end;
+}
+.border-top{
+border-top: 1px solid var(--grey-100);
+}
+.tags .icons .icon-wrap{
+border-right: 1px solid var(--grey-100);
+padding: 0 8px;
+}
+.tags .icons .icon-wrap:first-child{
+    border-right: 0px;
+}
+.tag-badg{
+    border-radius: 100px;
+    background: var(--bg-light);
+    padding: 5px 0.5rem;
+    margin-left: 0.5rem;
+    color: var(--blue-500);
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px; /* 150% */
+transition: ease-in-out all 0.3s;
+width: fit-content;
+}
+.tag-badg:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    color: var(--blue-50);
+    background: var(--pumpkin-600);
+    transition: ease-in-out all 0.3s;
+
+}
+
+/**==============================================
+ *                encyclopedia
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.encyclopedia{
+    min-height: 50rem;
+}
+
+/**==============================================
+ *                article
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.article{
+    min-height: 50rem;
+}
+
+
+
+/**==============================================
+ *                recruitment
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.recruitment{
+    min-height: 50rem;
+}
+
+.navbar-toggler:focus{
+    outline: none;
+}
+.navbar-toggler{
+    border: 0;
+}
+
+
+
+/**==============================================
+ *                Simalar
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+.similar{
+    background: var(--bg-light);
+    padding: 3rem 0;
+}
+
+.swiper-custome  .swiper-button-prev,.swiper-custome  .swiper-button-next{
+    background: var(--color-fff);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    top: 20% ;
+}
+
+
+/**==============================================
+ *                Loading
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+ .loading-bg{
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 99;
+ }
+
+ .dots {
+  
+    margin: 135px auto 0px;
+    -webkit-filter: url(#goo);
+    filter: url(#goo);
+  }
+  
+  .dot {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+  }
+  .dot:before {
+    content: "";
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    background: #fce130;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateY(0) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
+    margin-left: -17.5px;
+    margin-top: -17.5px;
+  }
+  @-webkit-keyframes dot-move {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    18%,
+    22% {
+      -webkit-transform: translateY(-70px);
+      transform: translateY(-70px);
+    }
+    40%,
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes dot-move {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    18%,
+    22% {
+      -webkit-transform: translateY(-70px);
+      transform: translateY(-70px);
+    }
+    40%,
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes dot-colors {
+    0% {
+      background-color: #33cc99;
+    }
+    25% {
+      background-color: #f26d7d;
+    }
+    50% {
+      background-color: #fce130;
+    }
+    75% {
+      background-color: #30a0fc;
+    }
+    100% {
+      background-color: #33cc99;
+    }
+  }
+  @keyframes dot-colors {
+    0% {
+      background-color: #33cc99;
+    }
+    25% {
+      background-color: #f26d7d;
+    }
+    50% {
+      background-color: #fce130;
+    }
+    75% {
+      background-color: #30a0fc;
+    }
+    100% {
+      background-color: #33cc99;
+    }
+  }
+  .dot:nth-child(5):before {
+    z-index: 100;
+    width: 45.5px;
+    height: 45.5px;
+    margin-left: -22.75px;
+    margin-top: -22.75px;
+    -webkit-animation: dot-colors 4s ease infinite;
+    animation: dot-colors 4s ease infinite;
+  }
+  @-webkit-keyframes dot-rotate-1 {
+    0% {
+      -webkit-transform: rotate(-105deg);
+      transform: rotate(-105deg);
+    }
+    100% {
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+    }
+  }
+  @keyframes dot-rotate-1 {
+    0% {
+      -webkit-transform: rotate(-105deg);
+      transform: rotate(-105deg);
+    }
+    100% {
+      -webkit-transform: rotate(270deg);
+      transform: rotate(270deg);
+    }
+  }
+  .dot:nth-child(1) {
+    -webkit-animation: dot-rotate-1 4s 0s linear infinite;
+    animation: dot-rotate-1 4s 0s linear infinite;
+  }
+  .dot:nth-child(1):before {
+    background-color: #f26d7d;
+    -webkit-animation: dot-move 4s 0s ease infinite;
+    animation: dot-move 4s 0s ease infinite;
+  }
+  @-webkit-keyframes dot-rotate-2 {
+    0% {
+      -webkit-transform: rotate(165deg);
+      transform: rotate(165deg);
+    }
+    100% {
+      -webkit-transform: rotate(540deg);
+      transform: rotate(540deg);
+    }
+  }
+  @keyframes dot-rotate-2 {
+    0% {
+      -webkit-transform: rotate(165deg);
+      transform: rotate(165deg);
+    }
+    100% {
+      -webkit-transform: rotate(540deg);
+      transform: rotate(540deg);
+    }
+  }
+  .dot:nth-child(2) {
+    -webkit-animation: dot-rotate-2 4s 1s linear infinite;
+    animation: dot-rotate-2 4s 1s linear infinite;
+  }
+  .dot:nth-child(2):before {
+    background-color: #fce130;
+    -webkit-animation: dot-move 4s 1s ease infinite;
+    animation: dot-move 4s 1s ease infinite;
+  }
+  @-webkit-keyframes dot-rotate-3 {
+    0% {
+      -webkit-transform: rotate(435deg);
+      transform: rotate(435deg);
+    }
+    100% {
+      -webkit-transform: rotate(810deg);
+      transform: rotate(810deg);
+    }
+  }
+  @keyframes dot-rotate-3 {
+    0% {
+      -webkit-transform: rotate(435deg);
+      transform: rotate(435deg);
+    }
+    100% {
+      -webkit-transform: rotate(810deg);
+      transform: rotate(810deg);
+    }
+  }
+  .dot:nth-child(3) {
+    -webkit-animation: dot-rotate-3 4s 2s linear infinite;
+    animation: dot-rotate-3 4s 2s linear infinite;
+  }
+  .dot:nth-child(3):before {
+    background-color: #30a0fc;
+    -webkit-animation: dot-move 4s 2s ease infinite;
+    animation: dot-move 4s 2s ease infinite;
+  }
+  @-webkit-keyframes dot-rotate-4 {
+    0% {
+      -webkit-transform: rotate(705deg);
+      transform: rotate(705deg);
+    }
+    100% {
+      -webkit-transform: rotate(1080deg);
+      transform: rotate(1080deg);
+    }
+  }
+  @keyframes dot-rotate-4 {
+    0% {
+      -webkit-transform: rotate(705deg);
+      transform: rotate(705deg);
+    }
+    100% {
+      -webkit-transform: rotate(1080deg);
+      transform: rotate(1080deg);
+    }
+  }
+  .dot:nth-child(4) {
+    -webkit-animation: dot-rotate-4 4s 3s linear infinite;
+    animation: dot-rotate-4 4s 3s linear infinite;
+  }
+  .dot:nth-child(4):before {
+    background-color: #33cc99;
+    -webkit-animation: dot-move 4s 3s ease infinite;
+    animation: dot-move 4s 3s ease infinite;
+  }
+
+
+  /**==============================================
+   *                Media Query
+   *  
+   *  
+   *  
+   *  
+   *=============================================**/
+   @media screen and (max-width: 991px) {
+    .col-image-box{
+        display: flex;
+        justify-content: center;
+    }
+    .swiper-box .swiper-slide {
+        width: 50% !important;
+        padding: 2rem 0;
+        height: 25rem;
+    }
+    .banner-main{
+        min-height: 40rem;
+    }
+    .navbar-nav  {
+            margin: 0 !important;
+    }
+    .category-cat ul{
+        display: flex;
+        overflow-x: auto;
+        padding: 0 0 1rem 0;
+    }
+    .category-cat p{
+        display: none;
+    }
+    .category-search{
+        margin-bottom: 1rem;
+    }
+    .category-cat li::after{
+        display: none;
+    }
+    .category-cat li  span{
+        display: none;
+    }
+    .category-cat li a{
+        background: var(--bg-light);
+        border-radius: 100px;
+    }
+    .category-cat li{
+        margin: 0 12px;
+    }
+    .nav-item.custom{
+        margin-bottom: 1rem;
+    }
+    .navbar-nav{
+        padding: 1rem 0;
+    }
+    .overflow-custom-auto{
+        overflow-x: auto;
+    }
+   }
+   @media screen and (max-width: 768px) {
+   
+   .whay-title{
+    padding-bottom: 0;
+   }
+   .whay-sub-title{
+    padding-bottom: 0;
+   }
+   .login-bg{
+    padding: 2rem 0;
+   }
+   .ghallery .swiper-rtl .swiper-button-prev, .swiper-rtl .swiper-button-next{
+    width: 32px;
+    height: 32px;
+   }
+   .ghallery .swiper-rtl .swiper-button-prev::after, .swiper-rtl .swiper-button-next::after{
+    font-size: 18px !important;
+   }
+   .breadcrumb-ul{
+    margin-top: 2rem;
+ }
+ .contact-page .info .value,footer .contact .item .value{
+    width: 70%;
+ }
+ .banner-content .title{
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 4rem;
+    }
+    .banner-content .sub-title
+    {
+    font-size: 20px;
+    text-align: center;
+    }
+    .advantage .title{
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 1rem;
+    }
+    .whay-title{
+        font-size: 1.5rem;
+    }
+    .card-advantage .title ,  .property-card .title{
+        font-size: 0.9rem;
+    }
+    .whay-sub-title{
+        font-size: 1.2rem;
+    }
+    .whay-description, .description,  .property-card .title{
+        font-size: 1rem;
+    }
+    .property-title{
+        text-align: center;
+    }
+    .property-card .description{
+        font-size: 0.9rem;
+    }
+  
+    .last-article .description, .category .description, .favorites .description{
+        font-size: 0.7rem;
+    }
+    .card-advantage .counter{
+        padding-top: 0.5rem;
+    }
+    .card-advantage{
+        height: 16rem;
+    }
+    .our-tool {
+        padding: 1rem 0;
+    }
+    footer .contact .item .value{
+        font-size: 0.9rem;
+    }
+    .card-more-link{
+        padding: 0.5rem;
+        font-size: 12px;
+    }
+    .card-more-link img{
+        margin-right: 5px;
+        width: 1rem;
+    }
+    .breadcrumb-item a {
+        font-size: 12px;
+    }
+    .contact-page .title{
+        font-size: 1rem;
+    }
+    .contact-page .item .value span{
+        font-size: 12px;
+    }
+    .contact-page .item .value span:first-child{
+        font-size: 14px;
+    }
+    .contact-page {
+        padding: 2rem 0;
+    }
+    .contact-page .item{
+        margin-bottom: 1rem;
+    }
+    .contact-page .info {
+        padding: 1rem;
+    }
+    .ghallery .swiper-rtl .swiper-button-prev,.ghallery  .swiper-rtl .swiper-button-next{
+        padding: 0 0.5rem;
+    }
+    .ghallery{
+        padding: 0;
+    }
+    .category  h2{
+        font-size: 1.2rem;
+    }
+    .favorites  .swiper-rtl .swiper-button-prev,.favorites .swiper-rtl .swiper-button-next{
+        padding: 0 0.5rem !important;
+    }
+    .swiper-button-prev:after, .swiper-button-next:after{
+        font-size: 18px !important;
+    }
+    .favorites .swiper-rtl .swiper-button-prev, .favorites .swiper-rtl .swiper-button-next {
+        padding: 0 0.5rem !important;
+        width: 32px;
+        height: 32px;
+        top: 40%;
+    }
+    .btn-outline-blue{
+        padding: 5px 0.5rem;
+        font-size: 12px;
+    }
+    .swiper-custome  .swiper-button-prev,.swiper-custome  .swiper-button-next{
+
+        width: 32px !important;
+        height: 32px !important;
+        top: 40% !important;
+    }
+    .commment-info-right {
+        width: 100%;
+    }
+    .comment-list .replies {
+        padding-right: 1.5rem;
+    }
+   }
+   @media screen and (max-width: 420px) {
+    .breadcrumb-ul{
+        flex-direction: column;
+    }
+    .breadcrumb-item{
+        width: fit-content;
+    }
+
+   }
+   .ghallery-swp .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  
+  .ghallery-swp .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+  .ghallery-swp{
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+  .ghallery-swp .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ghallery-swp-2{
+    height: 80%;
+    width: 100%;
+  }
+  .ghallery-swp-2 .swiper-slide img{
+    object-fit: cover;
+    width: 100%;
+  }
+
+
+ 
+
+
