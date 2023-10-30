@@ -17,7 +17,7 @@ const HeaderCustome = () => {
    *
    *=============================================**/
   useEffect(() => {
-    fetch("http://185.103.129.114/:82/api/v1/Category/GetCategories")
+    fetch("http://185.103.129.114:82/api/v1/Category/GetCategories")
       .then((res) => res.json())
       .then(({ data }) => {
         setData(data);
