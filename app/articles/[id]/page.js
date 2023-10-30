@@ -13,7 +13,7 @@ import ImageBas64 from "@/app/Components/ImageBas64/ImageBas64";
 import CommentList from "@/app/Components/CommentList/CommentList";
 
 const  getSigleData =async(id)=>{
-  const api =`http://192.168.3.17:82/api/v1/Articles/GetArticleDetails?articleId=${id}`
+  const api =`http://185.103.129.114:82/api/v1/Articles/GetArticleDetails?articleId=${id}`
 const res =await fetch(api,{cache: 'no-store' })
 if(!res.ok){
   throw new Error('Failed to fetch data lats Article')
