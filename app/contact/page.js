@@ -1,13 +1,10 @@
-"use client";
 import React from "react";
 import HeaderCustome from "../Components/HeaderCustome";
 import "../custome.css";
 import FooterCustom from "../Components/FooterCustom";
 import aboutImage from "@/public/Frame 1261154642.png";
 import BreadcrumbCustom from "../Components/BreadcrumbCustom";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
-import { MapContainer, TileLayer, Popup } from "react-leaflet";
+
 import "leaflet/dist/leaflet.css";
 //icon
 import phone from "@/public/Phone, Call.svg";
@@ -15,11 +12,9 @@ import location from "@/public/Pin, Location.svg";
 import mailBox from "@/public/Mailbox.svg";
 import mail from "@/public/Mail.svg";
 import Image from "next/image";
+import MapLeft from "./MapLeft";
 
-import { Marker } from "react-leaflet";
-import { Icon } from "leaflet";
-function contact() {
-  const position = [35.76081170005898, 51.059167325594025];
+function Contact() {
   return (
     <>
       <HeaderCustome />
@@ -54,25 +49,7 @@ function contact() {
           <h3 className="whay-title"> تماس باما</h3>
           <div className="row">
             <div className="col-12 col-lg-5 order-lg-0 order-1">
-              <MapContainer
-                center={position}
-                zoom={13}
-                scrollWheelZoom={false}
-                style={{
-                  height: "430px",
-                  width: "100%",
-                  overflow: "hidden",
-                  zIndex: "2",
-                }}
-              >
-                <TileLayer
-                  attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker position={position}>
-                  <Popup>رسام نقش آناهیتا</Popup>
-                </Marker>
-              </MapContainer>
+              <MapLeft />
             </div>
             <div className="col-12 col-lg-7 order-lg-1 order-0">
               <div className="info">
@@ -130,4 +107,4 @@ function contact() {
   );
 }
 
-export default contact;
+export default Contact;

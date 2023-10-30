@@ -11,40 +11,7 @@ import Pen from "@/public/pen.svg";
 import Lazer from "@/public/lazer.svg";
 
 function Advantages() {
-  const [countOne, setCountOne] = useState(0);
-  const [countTwo, setCountTwo] = useState(0);
-  const [countThree, setCountThree] = useState(0);
-  const [countFour, setCountFour] = useState(0);
 
-  // Function to start the counter animation
-  const startCounter = (setter, maxValue) => {
-      let count = 0;
-      const timer = setInterval(() => {
-        if (count <= maxValue) {
-          setter(count);
-          count += 1;
-        } else {
-          clearInterval(timer);
-        }
-      }, 9000);
-      AOS.init();
-      AOS.refresh();
-      return () => {
-        clearInterval(timer);
-      };
-  };
-
-  // Set maximum values for the counters
-  const maxValueOne = 17;
-  const maxValueTwo = 2;
-  const maxValueThree = 12;
-  const maxValueFour = 3;
-
-  // Start the counter animations
-  startCounter(setCountOne, maxValueOne);
-  startCounter(setCountTwo, maxValueTwo);
-  startCounter(setCountThree, maxValueThree);
-  startCounter(setCountFour, maxValueFour);
 
   return (
     <div className="advantage">
@@ -61,7 +28,7 @@ function Advantages() {
               </div>
               <div className="counter">
                 {" "}
-                + <span>{countOne}</span>
+                + <span>{10}</span>
               </div>
               <span className="title">
                 {" "}
@@ -76,7 +43,7 @@ function Advantages() {
               </div>
               <div className="counter">
                 {" "}
-                + <span>{countTwo} </span>
+                + <span>{12} </span>
               </div>
               <span className="title"> خط تولید لیزری </span>
             </div>
@@ -88,7 +55,7 @@ function Advantages() {
               </div>
               <div className="counter">
                 {" "}
-                + <span>{countThree} </span>
+                + <span>{13} </span>
               </div>
               <span className="title"> طراح حرفه ای </span>
             </div>
@@ -100,7 +67,7 @@ function Advantages() {
               </div>
               <div className="counter">
                 {" "}
-                + <span>{countFour} </span>
+                + <span>{1} </span>
               </div>
               <span className="title"> خط تولید آنالوگ </span>
             </div>
