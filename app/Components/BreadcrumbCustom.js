@@ -6,6 +6,7 @@ import { useSearchParams } from 'next/navigation'
 import Link from "next/link";
 import arrow from "@/public/Arrow, left.svg";
 import Image from "next/image";
+
 function BreadcrumbCustom({title}) {
   const searchParams = useSearchParams();
   const paths = usePathname();
@@ -14,10 +15,10 @@ function BreadcrumbCustom({title}) {
 
   return (
     <div className="container-fluid container-lg d-flex justify-content-between align-items-baseline pe-0 mt-5 mt-lg-0">
+
       <ul className="breadcrumb-ul ">
         {pathNames && (
           <li className="breadcrumb-item">
-            {" "}
             <Link href={"/"}> صفحه اصلی</Link>
           </li>
         )}
@@ -25,21 +26,21 @@ function BreadcrumbCustom({title}) {
           pathNames.map((item, i) => {
             return (
               <li key={i} className="breadcrumb-item">
-              {i === pathNames.length - 1 ? (
-               item === "contact"
-               ? "درباره ما"
-               : item === "ghallery"
-               ? "گالری"
-               : item === "trainings"
-               ? "آموزش های فنی طراحی"
-               : item === "categoryes"
-               ? "مقالات"
-               : 
-               title?title:
-               item
+                {i === pathNames.length - 1 ? (
+                item === "contact"
+                ? "درباره ما"
+                : item === "ghallery"
+                ? "گالری"
+                : item === "trainings"
+                ? "آموزش های فنی طراحی"
+                : item === "categoryes"
+                ? "مقالات"
+                : 
+                title?title:
+                item
                
               ) : (
-                <li className="breadcrumb-item">
+                  <>
                   {item === "contact"
                     ? "درباره ما"
                     : item === "ghallery"
@@ -49,7 +50,7 @@ function BreadcrumbCustom({title}) {
                     : item === "categoryes"
                     ? "مقالات"
                     : item}
-                </li>
+              </>
               )}
             </li>
             );

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import styles from './page.module.css'
 import HeaderCustome from "@/app/Components/HeaderCustome";
 import '@/app/custome.css'
@@ -10,6 +10,7 @@ import OurTool from './Components/OurTool';
 import FooterCustom from './Components/FooterCustom';
 import LatestArticles from './Components/LatestArticles';
 import Loading from './Components/Loading';
+
 export default function Home() {
   return (
     <main className={styles.main}>

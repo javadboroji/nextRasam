@@ -1,5 +1,6 @@
-import React from 'react'
-import Comments from '../Comments'
+import React from 'react';
+import dynamic from 'next/dynamic'
+const Comments =dynamic(()=> import("@/app/Components/Comments"),{ssr:false })  
 
 function ReplyComment({closReply}) {
     const closeReply=()=>{

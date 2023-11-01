@@ -7,8 +7,6 @@ import Link from "next/link";
 import useSWR from 'swr'
 
 
-
-
 export function Menus(){
   const fetcher = async () => {
     const res = await fetch("http://192.168.3.17:82/api/v1/Category/GetCategories");
@@ -25,7 +23,7 @@ export function Menus(){
 
 const HeaderCustome = () => {
   //const [data, setData] = useState("");
-
+  
   const [dropDown, setDropDown] = useState(false);
   /**==============================================
    *                api give menu dynamick value
@@ -45,6 +43,7 @@ const HeaderCustome = () => {
     return(<p> خطا ....</p>)
 
   }
+
   return (
     <div
       className="container-fluid position-fixed ps-0 pe-0 "

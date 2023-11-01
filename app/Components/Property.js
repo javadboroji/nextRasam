@@ -11,7 +11,7 @@ import AOS from "aos";
 import { useState, useEffect } from "react";
 
 function Property() {
-  const [list, setList] = useState([
+  const list= [
     {
       id: 1,
       title: "پاسخ گویی و احترام به حقوق مشتری ",
@@ -44,7 +44,7 @@ function Property() {
       icon: sendIcon,
       bgColor: "#009688",
     },
-  ]);
+  ];
   const [hoveredItemId, setHoveredItemId] = useState(null);
   const handleMouseEnter = (id) => {
     setHoveredItemId(id);

@@ -1,7 +1,6 @@
-"use client";
+"use client"
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
 import { Navigation,Autoplay } from 'swiper/modules';
 // Import Swiper styles
 import "swiper/css";
@@ -16,7 +15,7 @@ import ai from "@/public/ai.svg";
 import photoshop from "@/public/photoshop.svg";
 import circle from "@/public/circle.svg"
 function OurTool() {
-  const [list, setList] = useState([setting, kodak, mos, xsys, ai, photoshop,circle]);
+  const list = [setting, kodak, mos, xsys, ai, photoshop,circle];
   return (
     <div className="our-tool">
       <div className="container">

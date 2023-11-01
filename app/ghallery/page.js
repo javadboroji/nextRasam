@@ -1,7 +1,9 @@
 
 import React from "react";
 import "@/app/custome.css";
-import BreadcrumbCustom from "../Components/BreadcrumbCustom";
+import dynamic from 'next/dynamic'
+
+const BreadcrumbCustom =dynamic(()=>import("@/app/Components/BreadcrumbCustom"),{ssr:false })  ;
 import GhallerySwiper from "./GhallerySwiper";
 import LayoutPage from "../Components/LayoutPage";
 function Ghallery() {

@@ -1,12 +1,11 @@
-"use client";
 
-import React,{useState} from "react";
+import React from "react";
 import SliderPosts from "./SliderPosts";
 import cardThumbnail from '@/public/frame-1261154708@2x.png';
 
 
 function SimilarContent({ title }) {
-  const [posts, setPosts] = useState([
+  const posts= [
     {
       id: "f-1",
       title: " کیفیت رنگ اضافی در چاپ افست تغذیه ورقی",
@@ -67,7 +66,7 @@ function SimilarContent({ title }) {
       like: 12,
       comment: 2,
     },
-  ]);
+  ];
   return (
     <div className="similar">
       <div className="container">

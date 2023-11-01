@@ -1,16 +1,14 @@
-"use client";
 import React from "react";
 import logo from "@/public/LogoSite.svg";
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
 //icon
 import phone from "@/public/Phone, Call.svg";
 import location from "@/public/Pin, Location.svg";
 import mailBox from "@/public/Mailbox.svg";
 import mail from "@/public/Mail.svg";
 function FooterCustom() {
-  const [menu, setMenu] = useState([
+  const menu =[
     {
       id: "m1",
       title: "گالری تصاویر",
@@ -41,8 +39,8 @@ function FooterCustom() {
       title: " آموزش های فنی طراحی ",
       url: "/",
     },
-  ]);
-  const [contact, setContact] = useState([
+  ];
+  const contact = [
     {
       id: "c1",
       title: "021-91092227",
@@ -64,7 +62,7 @@ function FooterCustom() {
       title: "flexo.rasam@gmail.com",
       icon: mail,
     },
-  ]);
+  ];
   return (
     <footer>
       <div className="container">

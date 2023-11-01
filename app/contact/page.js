@@ -1,7 +1,9 @@
 import React from "react";
 import "@/app/custome.css";
 import aboutImage from "@/public/Frame 1261154642.png";
-import BreadcrumbCustom from "../Components/BreadcrumbCustom";
+import dynamic from 'next/dynamic'
+const BreadcrumbCustom =dynamic(()=>import("@/app/Components/BreadcrumbCustom"),{ssr:false })  ;
+const MapLeft =dynamic(()=>import("@/app/Components/MapLeft"),{ssr:false })  ;
 import "leaflet/dist/leaflet.css";
 //icon
 import phone from "@/public/Phone, Call.svg";
@@ -9,7 +11,6 @@ import location from "@/public/Pin, Location.svg";
 import mailBox from "@/public/Mailbox.svg";
 import mail from "@/public/Mail.svg";
 import Image from "next/image";
-import MapLeft from "./MapLeft";
 import LayoutPage from "../Components/LayoutPage";
 
 function Contact() {

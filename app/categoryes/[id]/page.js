@@ -1,18 +1,21 @@
 
 import React from "react";
 import { use } from "react";
-import BreadcrumbCustom from "@/app/Components/BreadcrumbCustom";
+import dynamic from 'next/dynamic'
+
 import FooterCustom from "@/app/Components/FooterCustom";
 import HeaderCustome from "@/app/Components/HeaderCustome";
 import "@/app/custome.css";
-import Comments from "@/app/Components/Comments";
+
 import SingleTitle from "@/app/Components/SingleTitle";
 import Tags from "@/app/Components/Tags";
 import SimilarContent from "@/app/Components/SimilarContent";
 import ImageBas64 from "@/app/Components/ImageBas64/ImageBas64";
 import CommentList from "@/app/Components/CommentList/CommentList";
+ const BreadcrumbCustom =dynamic(()=>import("@/app/Components/BreadcrumbCustom"),{ssr:false })  ;
+ const Comments =dynamic(()=> import("@/app/Components/Comments"),{ssr:false })  
 
-const  getSigleData =async(id)=>{
+ const getSigleData =async(id)=>{
   const api =`http://192.168.3.17:82/api/v1/Articles/GetArticleDetails?articleId=${id}`
 const res =await fetch(api,{cache: 'no-store' })
 if(!res.ok){

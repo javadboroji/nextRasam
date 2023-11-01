@@ -1,10 +1,8 @@
-import React from "react";
 import Image from "next/image";
 import like from "@/public/Heart, Favorite, Love.svg";
 import comment from "@/public/chat-message-1.svg";
 import Share from "@/public/Share.svg";
 function Tags({ tags, countLike, countComment }) {
-  console.log(tags);
   return (
     <div className="tags">
       <div className="container border-top py-3">

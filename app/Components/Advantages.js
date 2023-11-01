@@ -1,6 +1,4 @@
 
-
-import React from "react";
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -8,10 +6,7 @@ import Line from "@/public/line.svg";
 import Mod from "@/public/mod.svg";
 import Pen from "@/public/pen.svg";
 import Lazer from "@/public/lazer.svg";
-
 function Advantages() {
-
-
   return (
     <div className="advantage">
       <div className="container">

@@ -3,7 +3,6 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SliderPosts from "./SliderPosts";
-
 const getLastArticle =async()=>{
   const api ='http://192.168.3.17:82/api/v1/Articles/GetLatestArticles'
   const res =await fetch(api,{cache: 'no-store' })
