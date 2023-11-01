@@ -1,10 +1,7 @@
 import React from "react";
-import HeaderCustome from "../Components/HeaderCustome";
 import "@/app/custome.css";
-import FooterCustom from "../Components/FooterCustom";
 import aboutImage from "@/public/Frame 1261154642.png";
 import BreadcrumbCustom from "../Components/BreadcrumbCustom";
-
 import "leaflet/dist/leaflet.css";
 //icon
 import phone from "@/public/Phone, Call.svg";
