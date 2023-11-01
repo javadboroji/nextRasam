@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import SliderPosts from "./SliderPosts";
 
 const getLastArticle =async()=>{
-  const api ='http://185.103.129.114:82/api/v1/Articles/GetLatestArticles'
+  const api ='http://192.168.3.17:82/api/v1/Articles/GetLatestArticles'
   const res =await fetch(api,{cache: 'no-store' })
   if(!res.ok){
     throw new Error('Failed to fetch data lats Article')
@@ -22,7 +22,7 @@ async function LatestArticles() {
       <div className="container">
       <h3 className="whay-title text-center"> آخرین مقالات</h3>
       {
-      <SliderPosts posts={cards} categorey={'articles'}/>
+      <SliderPosts posts={cards} categorey={'categoryes'}/>
       }
   
     </div>  

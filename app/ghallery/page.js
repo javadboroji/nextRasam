@@ -1,17 +1,12 @@
 
 import React from "react";
-import HeaderCustome from "../Components/HeaderCustome";
-import FooterCustom from "../Components/FooterCustom";
-
-import Link from "next/link";
-import Image from "next/image";
 import "@/app/custome.css";
 import BreadcrumbCustom from "../Components/BreadcrumbCustom";
 import GhallerySwiper from "./GhallerySwiper";
+import LayoutPage from "../Components/LayoutPage";
 function Ghallery() {
   return (
-    <>
-      <HeaderCustome />
+      <LayoutPage>
    
       <div className="ghallery">
         <BreadcrumbCustom />
@@ -22,8 +17,7 @@ function Ghallery() {
 
         </div>
       </div>
-      <FooterCustom />
-    </>
+      </LayoutPage>
   );
 }
 

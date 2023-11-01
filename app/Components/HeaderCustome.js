@@ -4,9 +4,27 @@ import { useState } from "react";
 import Image from "next/image";
 import logo from "@/public/LogoSite.svg";
 import Link from "next/link";
+import useSWR from 'swr'
+
+
+
+
+export function menus(){
+  const fetcher = async () => {
+    const res = await fetch("http://192.168.3.17:82/api/v1/Category/GetCategories");
+    const { data } = await res.json();
+    return data;
+  };
+  const { data, error } = useSWR('/api/navgation', fetcher, { revalidateOnFocus: false });
+  return {
+    data,
+    error,
+    isLoading: !data && !error,
+  };
+}
 
 const HeaderCustome = () => {
-  const [data, setData] = useState("");
+  //const [data, setData] = useState("");
 
   const [dropDown, setDropDown] = useState(false);
   /**==============================================
@@ -16,23 +34,21 @@ const HeaderCustome = () => {
    *
    *
    *=============================================**/
-  useEffect(() => {
-    fetch("http://185.103.129.114:82/api/v1/Category/GetCategories")
-      .then((res) => res.json())
-      .then(({ data }) => {
-        setData(data);
-        //setLoading(false)
-      });
-  }, []);
-
+  const { data, error, isLoading } = menus();
   const drodownHandler = () => {
     setDropDown(() => !dropDown);
   };
+  if(isLoading){
+    return(<p> درحال بارگزاری ....</p>)
+  } 
+  if( error){
+    return(<p> خطا ....</p>)
 
+  }
   return (
     <div
       className="container-fluid position-fixed ps-0 pe-0 "
-      style={{ zIndex: "100", height: dropDown ? "100%" : "auto" }}
+      style={{ zIndex: "100", height: dropDown ? "100%" : "" }}
     >
       <nav
         className="navbar navbar-expand-lg header-bg  d-flex h-100"
@@ -66,10 +82,10 @@ const HeaderCustome = () => {
                 data.map((item, i) => {
                   return (
                     <li className={`nav-item custom ${item.subs&& 'sub-menu'} px-2`} key={item.id}>
-                      <Link className='nav-link menu-text' href={"/"}>
+                      <Link className='nav-link menu-text' href={{pathname:"/categoryes" ,query:{id:item.id,catParent:item.id}}}>
                         {item.title}
                       </Link>
-                      {item.subs && (
+                      {item.subs.length>0 && (
                         <ul className="dropdown-menu">
                           {item.subs.map((sub) => {
                             return (
@@ -77,7 +93,7 @@ const HeaderCustome = () => {
                                 className="nav-item custom px-2 "
                                 key={sub.id}
                               >
-                                <Link className="nav-link menu-text" href={"/"}>
+                                <Link className="nav-link menu-text" href={{pathname:"/categoryes" , query:{ cat:sub.title,id:sub.id,catParent:item.id}}}>
                                   {sub.title}
                                 </Link>
                               </li>
@@ -88,11 +104,11 @@ const HeaderCustome = () => {
                     </li>
                   );
                 })}
-              <li className="nav-item custom px-2 ">
+              {/* <li className="nav-item custom px-2 ">
                 <Link className="nav-link menu-text" href={"/trainings"}>
                   آموزش های فنی طراحی
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item custom px-2 ">
                 <Link className="nav-link menu-text" href={"/ghallery"}>
                   گالری تصاویر

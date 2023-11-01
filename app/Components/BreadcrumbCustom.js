@@ -32,24 +32,24 @@ function BreadcrumbCustom({title}) {
                ? "گالری"
                : item === "trainings"
                ? "آموزش های فنی طراحی"
-               : item === "article"
+               : item === "categoryes"
                ? "مقالات"
                : 
                title?title:
                item
                
               ) : (
-                <Link href={`/${item}`}>
+                <li className="breadcrumb-item">
                   {item === "contact"
                     ? "درباره ما"
                     : item === "ghallery"
                     ? "گالری"
                     : item === "trainings"
                     ? "آموزش های فنی طراحی"
-                    : item === "articles"
+                    : item === "categoryes"
                     ? "مقالات"
                     : item}
-                </Link>
+                </li>
               )}
             </li>
             );

@@ -385,6 +385,13 @@ padding: 1rem 0;
  *  
  *  
  *=============================================**/
+ .baget-post{
+    background: var(--blue-500);
+    font-size: 10px;
+    color: #fff;
+    padding: 5px;
+    border-radius: 50px;
+ }
 .last-article .thumbnail ,.category .thumbnail ,.favorites .thumbnail{
     position: relative;
     width: 100%;
@@ -392,7 +399,7 @@ padding: 1rem 0;
     padding-top: 74%;
     overflow: hidden;
 }
-.last-article .thumbnail img ,.category .thumbnail img ,.favorites .thumbnail img{
+/* .last-article .thumbnail img ,.category .thumbnail img ,.favorites .thumbnail img{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -400,7 +407,7 @@ padding: 1rem 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
 .last-article  .title ,.category  .title,.favorites  .title{
     color: var(--text-black);
     text-align: justify;
@@ -459,6 +466,16 @@ width: fit-content;
 .card-more-link img{
     margin-right: 1rem;
 }
+.article-card{
+    transition: ease-in-out 0.3s all;
+ overflow: hidden;
+
+}
+.article-card:hover{
+    transform: scale(0.95);
+    transition: ease-in-out 0.3s all;
+
+}
 .article-card-info{
     background: var(--color-fff);
     padding: 0.8rem ;
@@ -481,6 +498,14 @@ width: fit-content;
     padding-top: 42%;
     border-radius: 8px;
 }
+/* .singleThumbnail-box img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+} */
 .singleThumbnail{
     position: absolute;
     top: 50%;
@@ -616,6 +641,32 @@ line-height: 175%; /* 24.5px */
     font-weight: 500;
     line-height: 26px; /* 185.714% */
     text-transform: uppercase;
+}
+.categorey-list-ul{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    padding: 0;
+    right: 0;
+}
+
+.pagnation-btn{
+    color: var(--text-black);
+text-align: center;
+font-family: 'IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 150%; /* 24px */
+padding: 0.6rem 1rem;
+border: 0;
+background:var(--bg-light);
+margin: 0 8px;
+border-radius: 8px;
+}
+.pagnation-btn.active{
+    border: 1px solid var(--blue-400);
+    color: var(--blue-400);
 }
 /**==============================================
  *                Footer
@@ -920,7 +971,7 @@ text-transform: uppercase;
 .breadcrumb-item::before{
     display: none;
 }
-.breadcrumb-item a{
+.breadcrumb-item ,.breadcrumb-item a{
     color: var(--grey-700);
 text-align: right;
 font-family: 'IRANSans(FaNum)';
@@ -975,7 +1026,19 @@ line-height: 50px; /* 156.25% */
 .mySwiper.ghallery{
 background: transparent;
 }
-
+/* .ghallery-swp-2 .swiper-slide {
+    width: 30% !important;
+  }
+  .ghallery-swp-2 .swiper-slide-next{
+  width: 60% !important;
+  }  */
+  .ghallery-swp-2 .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 30% !important;
+    height: 300px;
+  }
+  
 /**==============================================
  *                Categorey
  *  
@@ -1147,7 +1210,7 @@ line-height: 175%; /* 24.5px */
 
 .tags .icons{
     display: flex;
-    justify-content:end;
+    justify-content:flex-end;
 }
 .border-top{
 border-top: 1px solid var(--grey-100);
@@ -1204,7 +1267,9 @@ width: fit-content;
 .article{
     min-height: 50rem;
 }
-
+.active-categorey-list > a{
+    color: var(--pumpkin-600) !important;
+}
 
 
 /**==============================================
@@ -1491,6 +1556,9 @@ width: fit-content;
    *  
    *=============================================**/
    @media screen and (max-width: 991px) {
+    .nav-item.sub-menu:hover .dropdown-menu{
+        display: none ;
+    }
     .col-image-box{
         display: flex;
         justify-content: center;
@@ -1539,9 +1607,15 @@ width: fit-content;
     .overflow-custom-auto{
         overflow-x: auto;
     }
+    .categorey-list-ul{
+        top: 0;
+        right: 20%;
+    }
    }
    @media screen and (max-width: 768px) {
-   
+    .singleThumbnail-box{
+        padding-top: 60%;
+    }
    .whay-title{
     padding-bottom: 0;
    }
@@ -1621,6 +1695,7 @@ width: fit-content;
         margin-right: 5px;
         width: 1rem;
     }
+    
     .breadcrumb-item a {
         font-size: 12px;
     }
@@ -1679,6 +1754,9 @@ width: fit-content;
     .comment-list .replies {
         padding-right: 1.5rem;
     }
+    .ghallery-swp-2 .swiper-slide{
+        width: 85% !important;
+    }
    }
    @media screen and (max-width: 420px) {
     .breadcrumb-ul{
@@ -1687,12 +1765,13 @@ width: fit-content;
     .breadcrumb-item{
         width: fit-content;
     }
-
+    .ghallery-swp-2 .swiper-slide{
+        width: 80% !important;
+    }
    }
    .ghallery-swp .swiper-slide {
     width: 25%;
     height: 100%;
-    opacity: 0.4;
   }
   
   .ghallery-swp .swiper-slide-thumb-active {

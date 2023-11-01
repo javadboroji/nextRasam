@@ -45,7 +45,7 @@ function OurTool() {
                 return (
                   <SwiperSlide key={i}>
                     <div className="our-tool-img-box">
-                      <Image src={item} alt="image" />
+                      <Image src={item} width={500} height={500} alt="image" />
                     </div>
                   </SwiperSlide>
                 );

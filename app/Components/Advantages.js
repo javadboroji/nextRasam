@@ -1,8 +1,7 @@
-"use client";
+
 
 import React from "react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Line from "@/public/line.svg";
@@ -28,7 +27,7 @@ function Advantages() {
               </div>
               <div className="counter">
                 {" "}
-                + <span>{10}</span>
+                + <span>{17}</span>
               </div>
               <span className="title">
                 {" "}
@@ -43,7 +42,7 @@ function Advantages() {
               </div>
               <div className="counter">
                 {" "}
-                + <span>{12} </span>
+                + <span>{2} </span>
               </div>
               <span className="title"> خط تولید لیزری </span>
             </div>
@@ -55,7 +54,7 @@ function Advantages() {
               </div>
               <div className="counter">
                 {" "}
-                + <span>{13} </span>
+                + <span>{12} </span>
               </div>
               <span className="title"> طراح حرفه ای </span>
             </div>
@@ -67,7 +66,7 @@ function Advantages() {
               </div>
               <div className="counter">
                 {" "}
-                + <span>{1} </span>
+                + <span>{3} </span>
               </div>
               <span className="title"> خط تولید آنالوگ </span>
             </div>

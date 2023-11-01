@@ -4,7 +4,7 @@ import { use } from "react";
 import BreadcrumbCustom from "@/app/Components/BreadcrumbCustom";
 import FooterCustom from "@/app/Components/FooterCustom";
 import HeaderCustome from "@/app/Components/HeaderCustome";
-import "../../custome.css";
+import "@/app/custome.css";
 import Comments from "@/app/Components/Comments";
 import SingleTitle from "@/app/Components/SingleTitle";
 import Tags from "@/app/Components/Tags";
@@ -13,7 +13,7 @@ import ImageBas64 from "@/app/Components/ImageBas64/ImageBas64";
 import CommentList from "@/app/Components/CommentList/CommentList";
 
 const  getSigleData =async(id)=>{
-  const api =`http://185.103.129.114:82/api/v1/Articles/GetArticleDetails?articleId=${id}`
+  const api =`http://192.168.3.17:82/api/v1/Articles/GetArticleDetails?articleId=${id}`
 const res =await fetch(api,{cache: 'no-store' })
 if(!res.ok){
   throw new Error('Failed to fetch data lats Article')
@@ -53,8 +53,8 @@ return res.json()
          {/*  comments */}
          <Comments />
       {/* comment List */}
-      <CommentList comments={data.comments}/>
-       
+      {data.comments.length>0&&<CommentList comments={data.comments}/>
+ }       
 
           {/* simlar  */}
           <SimilarContent title={'مطالب مشابه '}/>
