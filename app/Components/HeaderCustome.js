@@ -9,7 +9,7 @@ import useSWR from 'swr'
 
 
 
-export function menus(){
+export function Menus(){
   const fetcher = async () => {
     const res = await fetch("http://192.168.3.17:82/api/v1/Category/GetCategories");
     const { data } = await res.json();
@@ -34,7 +34,7 @@ const HeaderCustome = () => {
    *
    *
    *=============================================**/
-  const { data, error, isLoading } = menus();
+  const { data, error, isLoading } = Menus();
   const drodownHandler = () => {
     setDropDown(() => !dropDown);
   };
