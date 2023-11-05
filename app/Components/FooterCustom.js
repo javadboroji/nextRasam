@@ -12,12 +12,12 @@ function FooterCustom() {
     {
       id: "m1",
       title: "گالری تصاویر",
-      url: "/",
+      url: "/ghallery",
     },
     {
       id: "m2",
       title: "درباره ما ",
-      url: "/",
+      url: "/contact",
     },
     {
       id: "m3",
@@ -27,12 +27,12 @@ function FooterCustom() {
     {
       id: "m4",
       title: " دانش نامه",
-      url: "/",
+      url: `/categoryes?id=a3f33d4ac9&catParent=a3f33d4ac9`,
     },
     {
       id: "m5",
       title: " مقالات  ",
-      url: "/",
+      url: "/categoryes?id=e4d1bc87ed&catParent=e4d1bc87ed",
     },
     {
       id: "m6",

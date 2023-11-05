@@ -8,6 +8,7 @@ import comment from "@/public/chat-message-1.svg";
 import Link from "next/link";
 import ImageBas64 from "@/app/Components/ImageBas64/ImageBas64";
 import PagenatinCustom from "../PagenatinCustom/PagenatinCustom";
+import AOS from "aos";
 function CatList() {
 
 /**==============================================
@@ -30,6 +31,7 @@ function CatList() {
   const [data, setData] = useState("");
   const searchParams = useSearchParams();
   const search = searchParams.get("id");
+  
   const api = `http://192.168.3.17:82/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
   useEffect(() => {
     fetch(api)
@@ -45,6 +47,8 @@ function CatList() {
       .catch((err) => {
         setError(err);
       });
+      AOS.init();
+      AOS.refresh();
   }, [search ,currentPage]);
 
 useEffect(() => {
@@ -58,7 +62,9 @@ useEffect(() => {
       {data &&
         data.data.map((post) => {
           return (
-            <div className="col-12 col-lg-4 mb-3" key={post.newsId}>
+            <div className="col-12 col-lg-4 mb-3" key={post.newsId}  data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000" >
               <div className="article-card d-flex flex-column category ">
                 <div className="thumbnail">
                   <ImageBas64 url={post.imageFile} />

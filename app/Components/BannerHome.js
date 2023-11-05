@@ -7,7 +7,7 @@ function BannerHome() {
           <div className="row d-flex  ">
             <div className="col-12 col-lg-8">
               <div className=" d-flex flex-column ">
-                <h3 className="title"> فلکسوگرافی رسام نقش </h3>
+                <h3 className="title typed-out"> فلکسوگرافی رسام نقش </h3>
                 <p className="sub-title">
                   {" "}
                   تولید کننده انواع کلیشه های ژلاتینی (دیجیتال){" "}

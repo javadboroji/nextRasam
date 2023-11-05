@@ -2,16 +2,16 @@
 import React from "react";
 import { use } from "react";
 import dynamic from 'next/dynamic'
-
+import "aos/dist/aos.css";
 import FooterCustom from "@/app/Components/FooterCustom";
 import HeaderCustome from "@/app/Components/HeaderCustome";
 import "@/app/custome.css";
-
 import SingleTitle from "@/app/Components/SingleTitle";
 import Tags from "@/app/Components/Tags";
 import SimilarContent from "@/app/Components/SimilarContent";
 import ImageBas64 from "@/app/Components/ImageBas64/ImageBas64";
 import CommentList from "@/app/Components/CommentList/CommentList";
+import DarkMod from "@/app/Components/DarkMod";
  const BreadcrumbCustom =dynamic(()=>import("@/app/Components/BreadcrumbCustom"),{ssr:false })  ;
  const Comments =dynamic(()=> import("@/app/Components/Comments"),{ssr:false })  
 
@@ -25,7 +25,6 @@ if(!res.ok){
 return res.json()
 }
  function page({ params }) {
-  console.log(params);
   const {data} = use(getSigleData(params.id))
   return (
     <>
@@ -34,9 +33,9 @@ return res.json()
         <div className="single-content mt-5">
           <BreadcrumbCustom title={data.news.Title}/>
         </div>
-        <div className="container">
-          <div className="singleThumbnail-box">
-          <ImageBas64 url={data.news.imageFile} classCustom={'singleThumbnail'}/>
+        <div  className="container" >
+          <div className="singleThumbnail-box" >
+          <ImageBas64 url={data.news.imageFile} classCustom={'singleThumbnail'} />
           </div>
         </div>
         {/* Title */}
@@ -44,7 +43,7 @@ return res.json()
      
         {/* Content */}
         <div className="container">
-          <div className="single-content" dangerouslySetInnerHTML={{ __html: data.news.Description }}>
+          <div  className="single-content" dangerouslySetInnerHTML={{ __html: data.news.Description }}>
           </div>
         </div>
         {/* Tags */}

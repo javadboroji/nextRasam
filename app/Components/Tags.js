@@ -22,7 +22,7 @@ function Tags({ tags, countLike, countComment }) {
         <div className="tags w-100 d-flex flex-wrap mt-5 mt-lg-0">
           {tags.length > 0 && !tags.every(tag => tag === '') &&  
             <>
-              <span> برچسب ها :</span>
+              <span className="tag-title"> برچسب ها :</span>
 
               {tags.map((tag, i) => {
                 return (

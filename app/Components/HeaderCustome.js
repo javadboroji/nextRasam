@@ -5,6 +5,7 @@ import Image from "next/image";
 import logo from "@/public/LogoSite.svg";
 import Link from "next/link";
 import useSWR from 'swr'
+import DarkMod from "./DarkMod";
 
 
 export function Menus(){
@@ -120,13 +121,16 @@ const HeaderCustome = () => {
               </li>
             </ul>
 
-            <button
+           <div className="d-flex flex-column flex-lg-row align-items-start align-items-lg-center ">
+           <button
               className="btn-blue-gradient"
               style={{ marginTop: "0" }}
               type="submit"
             >
               ثبت سفارش
             </button>
+            <DarkMod />
+           </div>
           </div>
         </div>
       </nav>

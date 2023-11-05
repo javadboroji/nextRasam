@@ -24,7 +24,7 @@ function Comments() {
     },
   });
   return (
-    <div className="comment my-5">
+    <div className="comment my-5" >
       <div className="container">
         <p className="comment-title"> دیدگاه شما</p>
         <form onSubmit={formik.handleSubmit} className="w-100">

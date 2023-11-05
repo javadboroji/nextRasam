@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           crossorigin="anonymous"
         ></link>
         <link rel="stylesheet" href="https://static.neshan.org/sdk/leaflet/v1.9.4/neshan-sdk/v1.0.8/index.css"/>
-     
+        <link rel="stylesheet" href="path/to/atropos.css" />
       </Head>
       <Script src="https://static.neshan.org/sdk/leaflet/v1.9.4/neshan-sdk/v1.0.8/index.js"></Script>
       <body className={inter.className}>{children}</body>

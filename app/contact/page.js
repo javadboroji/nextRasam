@@ -1,9 +1,16 @@
 import React from "react";
+import "aos/dist/aos.css";
 import "@/app/custome.css";
-import aboutImage from "@/public/Frame 1261154642.png";
-import dynamic from 'next/dynamic'
-const BreadcrumbCustom =dynamic(()=>import("@/app/Components/BreadcrumbCustom"),{ssr:false })  ;
-const MapLeft =dynamic(()=>import("@/app/Components/MapLeft"),{ssr:false })  ;
+import aboutImage from "@/public/worksss.svg";
+import whay from "@/public/quizeIcon.svg";
+import dynamic from "next/dynamic";
+const BreadcrumbCustom = dynamic(
+  () => import("@/app/Components/BreadcrumbCustom"),
+  { ssr: false }
+);
+const MapLeft = dynamic(() => import("@/app/Components/MapLeft"), {
+  ssr: false,
+});
 import "leaflet/dist/leaflet.css";
 //icon
 import phone from "@/public/Phone, Call.svg";
@@ -21,12 +28,24 @@ function Contact() {
         <div className="about mt-5">
           <div className="container">
             <div className="row pt-lg-5 pt-0 d-flex justify-content-between">
-              <div className="col-12 col-lg-4 ">
-                <div className="about-thumbnail">
-                  <Image src={aboutImage} alt="image" />
-                </div>
+              <div className="col-12 col-md-9 col-lg-6 col-xl-5">
+                  <div className="about-thumbnail ">
+                    {/* <Image src={aboutImage} alt="image" /> */}
+                    <div className="circle-1">
+                      <div className="d-flex flex-column align-items-center justify-content-center h-100  mt-2">
+                        <span className="title"> فلکسو گرافی</span>
+                        <span className="company-name"> رسام نقش آناهیتا</span>
+                      </div>
+                    </div>
+                    <div className="circle-2">
+                      <Image src={aboutImage} alt="image"/>
+                    </div>
+                    <div className="circle-3">
+                      <Image src={whay} alt="image"/>
+                    </div>
+                  </div>
               </div>
-              <div className="col-12 col-lg-7 ">
+              <div className="col-12 col-lg-6 ">
                 <h3 className="whay-title about-title py-3"> درباره ما</h3>
                 <span className="description">
                   کلیشه های تولیدی با تکنولوژی Flat Top که از جمله بهترین روشهای
@@ -34,10 +53,10 @@ function Contact() {
                   تولید و عرضه میگردد. تیم ما با بررسی و R&D انجام شده اقدام به
                   تولید کلیشه هایی با کیفیت بسیار بالاتر از کلیشه های flat top
                   نموده است که با نام DF به بازار مصرف عرضه میشود که عمده تولید
-                  این شرکت را در بر گرفته است. شرکت رسام نقش آناهیتا با دارا بودن
-                  دو خط تولید فیلم آنالوگ قادر به تولید کلیشه های آنالوگ با عرض
-                  ۱۰۶ سانت می باشد که به نوبه خود بزرگترین عرض قابل تولید در نوع
-                  خود در کشور است.
+                  این شرکت را در بر گرفته است. شرکت رسام نقش آناهیتا با دارا
+                  بودن دو خط تولید فیلم آنالوگ قادر به تولید کلیشه های آنالوگ با
+                  عرض ۱۰۶ سانت می باشد که به نوبه خود بزرگترین عرض قابل تولید در
+                  نوع خود در کشور است.
                 </span>
               </div>
             </div>

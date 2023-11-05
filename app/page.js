@@ -1,16 +1,17 @@
-import dynamic from 'next/dynamic'
-import styles from './page.module.css'
+import dynamic from "next/dynamic";
+import styles from "./page.module.css";
 import HeaderCustome from "@/app/Components/HeaderCustome";
-import '@/app/custome.css'
-import BannerHome from './Components/BannerHome';
-import Advantages from './Components/Advantages';
-import WhayRasam from './Components/WhayRasam';
-import Property from './Components/Property';
-import OurTool from './Components/OurTool';
-import FooterCustom from './Components/FooterCustom';
-import LatestArticles from './Components/LatestArticles';
-import Loading from './Components/Loading';
-
+import "@/app/custome.css";
+import BannerHome from "./Components/BannerHome";
+import Advantages from "./Components/Advantages";
+import WhayRasam from "./Components/WhayRasam";
+import Property from "./Components/Property";
+import OurTool from "./Components/OurTool";
+import FooterCustom from "./Components/FooterCustom";
+import LatestArticles from "./Components/LatestArticles";
+import Loading from "./Components/Loading";
+import DarkMod from "./Components/DarkMod";
+import Chat from "./Components/Chat/Chat";
 export default function Home() {
   return (
     <main className={styles.main}>
@@ -21,7 +22,8 @@ export default function Home() {
       <Property />
       <OurTool />
       <LatestArticles />
+      <Chat />
       <FooterCustom />
     </main>
-  )
+  );
 }

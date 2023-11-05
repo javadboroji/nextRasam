@@ -1,8 +1,10 @@
 "use client";
-import React from "react";
+import React,{useEffect} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
+import AOS from "aos";
+
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import like from "@/public/Heart, Favorite, Love.svg";
@@ -12,6 +14,11 @@ import arrow from "@/public/Arrow, left.svg";
 import Image from "next/image";
 import ImageBas64 from "./ImageBas64/ImageBas64";
 function SliderPosts({ posts, categorey }) {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, [])
+  
   return (
     <Swiper
       breakpoints={{
@@ -33,7 +40,9 @@ function SliderPosts({ posts, categorey }) {
       {posts.data &&
         posts.data.map((item) => {
           return (
-            <SwiperSlide key={item.Id} className="article-swiper-slide">
+            <SwiperSlide key={item.Id} className="article-swiper-slide"  data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
               <div className="article-card d-flex flex-column ">
                 <div className="thumbnail">
                   <ImageBas64 url={item.imageFile} />

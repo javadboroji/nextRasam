@@ -1,3 +1,4 @@
+import DarkMod from "./DarkMod"
 import FooterCustom from "./FooterCustom"
 import HeaderCustome from "./HeaderCustome"
 
@@ -9,7 +10,6 @@ function LayoutPage({ children }) {
         <div className="page-layoute">
             {children}
         </div>
-
 
         <FooterCustom />
     </>

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import search from "@/public/search-loupe.svg";
 import { useSearchParams } from "next/navigation";
+import AOS from "aos";
 
 function CatSideBar() {
   const [data, setData] = useState("");
@@ -26,6 +27,9 @@ function CatSideBar() {
       .catch((err) => {
         setError(err);
       });
+
+      AOS.init();
+      AOS.refresh();
   }, [catParent]);
 
   return (
@@ -35,7 +39,7 @@ function CatSideBar() {
         <Image src={search} alt="search " />
       </div>
       <div className="category-cat">
-        <h2 className="pb-3 d-block d-lg-none"> دسته بندی ها</h2>
+        <p className="pb-3 d-block d-lg-none"> دسته بندی ها</p>
         <p> دسته بندی ها</p>
         <ul>
           {data &&

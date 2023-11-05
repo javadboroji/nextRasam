@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import AOS from "aos";
 import { useEffect } from "react";
-import customImage from "@/public/whay.jpg"
+import customImage from "@/public/whayRasammm.svg"
 function WhayRasam() {
     useEffect(() => {
         AOS.init();
@@ -13,13 +13,13 @@ function WhayRasam() {
   return (
     <div className="whay-main">
       <div className="container">
-        <div className="row d-flex justify-content-between" >
-          <div className="col-12 col-lg-3 mb-3 mb-lg-0" data-aos="fade-right">
-            <div className="col-image-box">
+        <div className="row d-flex  justify-content-xl-between justify-content-lg-center" >
+          <div className="col-12 col-lg-6 col-xl-5 mb-3 mb-xl-0 align-items-lg-center" data-aos="fade-right">
+            <div className="col-image-box ">
                 <Image src={customImage} alt="whay" />
             </div>
           </div>
-          <div className="col-12 col-lg-8 d-flex flex-column mt-3 mt-lg-0"  data-aos="fade-left">
+          <div className="col-12 col-xl-7 d-flex flex-column mt-3 mt-xl-0 align-items-lg-center align-items-xl-start"  data-aos="fade-left">
             <h3 className="whay-title"> چرا رسام نقش؟</h3>
             <p className="whay-sub-title"> شما تصور کنید، ما خلق می کنیم </p>
             <span className="whay-description ">

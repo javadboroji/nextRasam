@@ -15,6 +15,33 @@
     --grey-700: #707070;
     --grey-100: #E1E1E1;
 }
+body.dark-mode{
+    --color-fff:#010b27;
+    --blue-bg-gradient: linear-gradient(90deg, #1E6AFD 0%, #3579FD 50.52%, #4081FD 77.6%, #4B88FD 100%);
+    --bg-light:#21242C;
+    --text-black:#FFFFFF;
+    --grey-600: #E1E1E1;
+    --grey-900:#D2D2D2;
+    --blue-50:#E9F0FF;
+    --blue-500: #1E6AFD;
+    --blue-400:#4B88FD;
+    --pumpkin-600: #F86F03;
+    --grey-500:#BEBEBE ;
+    --gray-300: #424242;
+    --gray-50:#9E9E9E;
+    --grey-700: #707070;
+    --grey-100: #424242;
+}
+body.dark-mode{
+    background: #0B0B12 !important;
+    transition:  ease-in-out 0.3s all;
+}
+.navbar-toggler-icon{
+    background-image: url('../public/menuBiger1.png');
+}
+body.dark-mode .navbar-toggler-icon{
+    background-image: url('../public/menuBiger.png');
+}
 @font-face {
     font-family: 'IRANSans(FaNum)';
     src: url('./assets/Font/IRANSANS\(FANUM\).TTF');
@@ -36,17 +63,45 @@
     font-family: 'IRANSans(FaNum)' !important ;
     background: #fff !important;
   }
-.header-bg{
-    background: var(--color-fff);
-box-shadow: 0px 2px 6px 0px rgba(87, 87, 87, 0.15);
+  body.dark-mode .header-bg{
+    background: rgba( 1, 13, 60, 0.8 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 
 }
-.nav-item.custom{
+.header-bg{
+    background: rgba( 255, 255, 255, 0.45 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.nav-item.sub-menu .dropdown-menu{
+    background: rgba( 255, 255, 255, 0.85 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+body.dark-mode .nav-item.sub-menu .dropdown-menu{
+    background: rgba( 1, 13, 60, 0.8 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+/* .nav-item.custom{
     padding-bottom: 0.5rem;
-}
-.nav-item.custom:hover{
+} */
+/* .nav-item.custom:hover{
     border-bottom: 2px solid var(--blue-500);
-}
+} */
 .banner-main{
     position: relative;
     width: 100%;
@@ -60,6 +115,9 @@ box-shadow: 0px 2px 6px 0px rgba(87, 87, 87, 0.15);
 }
 .dropdown-menu{
 top: 100%;
+border: 0;
+box-shadow: 0px 2px 6px 0px rgba(87, 87, 87, 0.15);
+
 right: 0;
 }
 .dropdown-menu li a{
@@ -75,6 +133,7 @@ right: 0;
 .nav-item.sub-menu:hover .dropdown-menu{
     display: block ;
 }
+
 .nav-link.menu-text ,.navbar-brand span{
     color: var(--text-black);
 text-align: justify;
@@ -101,7 +160,7 @@ font-weight: 500;
     filter: brightness(0.5);
 }
 .banner-content .title{
-color:var(--color-fff);
+color:#fff;
 text-align: right;
 font-family: 'IRANSans(FaNum)';
 font-size: 48px;
@@ -110,7 +169,7 @@ font-weight: 700;
 line-height: 40px; /* 83.333% */
 }
 .banner-content .sub-title{
-    color:var(--color-fff);
+    color:#fff;
     text-align: right;
 font-family: 'IRANSans(FaNum)';
 font-size: 24px;
@@ -121,7 +180,7 @@ padding: 2rem 0;
 
 }
 .banner-content .description{
-    color:var(--color-fff);
+    color:#fff;
     text-align: right;
 font-family: 'IRANSans(FaNum)';
 font-size: 16px;
@@ -131,7 +190,7 @@ line-height: 40px; /* 250% */
 
 }
 .btn-blue-gradient{
- color: var(--color-fff);
+ color: #fff;
 text-align: center;
 font-family: 'IRANSans(FaNum)';
 font-size: 14px;
@@ -140,14 +199,21 @@ font-weight: 500;
 line-height: 26px; /* 185.714% */
 text-transform: uppercase;
 border-radius: 8px;
- background: var(--blue-bg-gradient);
+ background: #1E6AFD;
  padding: 0.5rem 1rem;
  width: 7rem;
  outline: none;
  border: 0;
  margin-top: 2rem;
+ transition: ease-in-out 0.1 all;
 }
-
+.breadcrumb-item + .breadcrumb-item{
+    padding-left: 0 !important;
+    padding: 0 1rem !important;
+}
+/* .btn-blue-gradient:hover{
+    background: var(--text-black);
+} */
 .swiper-button-prev:after, .swiper-button-next:after{
     font-size: 24px !important;
     color: var(--grey-600) !important;
@@ -160,6 +226,7 @@ border-radius: 8px;
     top: 20% ; 
 
 }
+
 /**==============================================
  *                Advantage
  *  
@@ -184,7 +251,12 @@ border-radius: 8px;
     cursor: pointer;
     transform: scale(1.1);
  }
+ .card-advantage:hover  .icon{
+    transition: ease-in-out 0.3s all;
+    transform: rotate(360deg);
+ }
  .advantage .icon{
+    transition: ease-in-out 0.3s all;
     background: var(--blue-50);
     border-radius: 50%;
     width: 64px;
@@ -255,7 +327,6 @@ padding-bottom: 3rem;
   .whay-sub-title{
     color: var(--blue-500);
 text-align: right;
-font-family:' IRANSans(FaNum)';
 font-size: 24px;
 font-style: normal;
 font-weight: 400;
@@ -271,7 +342,12 @@ font-style: normal;
 font-weight: 400;
 line-height: 32px; /* 200% */
   }
-  .col-image-box{}
+  .col-image-box{
+    background: url('../public/Vector.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
   .col-image-box img{}
 
 /**==============================================
@@ -337,7 +413,40 @@ padding: 1rem 0;
 .our-tool{
     padding: 3rem 0;
     width: 100%;
+    /* background: url('../public/doooot.svg') ;
+    background-position: center;
+    background-repeat: no-repeat; */
+    /* -webkit-animation: 50s linear 0s normal none infinite animate;
+    -moz-animation: 50s linear 0s normal none infinite animate;
+    -ms-animation: 50s linear 0s normal none infinite animate;
+    -o-animation: 50s linear 0s normal none infinite animate;
+    animation: 50s linear 0s normal none infinite animate; */
 }
+ 
+@-webkit-keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 500px 0;}
+  }
+   
+  @-moz-keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 500px 0;}
+  }
+   
+  @-ms-keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 500px 0;}
+  }
+   
+  @-o-keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 500px 0;}
+  }
+   
+  @keyframes animate {
+    from {background-position:0 0;}
+    to {background-position: 500px 0;}
+  }
 .our-tool .title{
     padding-bottom: 1.5rem;
     text-align: center;
@@ -352,8 +461,11 @@ padding: 1rem 0;
     border-radius: 0.8rem;
     position: relative;
     overflow: hidden;
-    min-height: 180px;
-    padding: 1rem;
+    width: 12rem;
+    height: 100%;
+}
+.ourTool .swiper-slide{
+    width: 20% !important;
 }
 .our-tool-img-box img{
     position: absolute;
@@ -369,9 +481,14 @@ padding: 1rem 0;
     margin-top: 2rem;
 }
 .swiper-box .swiper-slide {
-    width: 17% !important;
-    padding: 2rem 0;
-    height: 25rem;
+    width: 16% !important;
+    padding: 1rem 0;
+    height: 12rem;
+}
+.slider-parent{
+    width: 75%;
+    margin: auto;
+    height: 100%;
 }
 .hover-bg-color:hover {
     background-color: var(--hover-bg-color, transparent);
@@ -441,7 +558,7 @@ font-weight: 400;
 line-height: 175%; /* 24.5px */
 }
 .like-count ,.comment-count {
-    color: var(--grey-600);
+    color: var(--pumpkin-600);
     text-align: right;
     font-family: 'IRANSans(FaNum)';
     font-size: 14px;
@@ -449,6 +566,9 @@ line-height: 175%; /* 24.5px */
     font-weight: 400;
     line-height: 26px; /* 185.714% */
     text-transform: uppercase;
+}
+.tag-title{
+    color: var(--text-black);
 }
 .card-more-link{
     color: var(--blue-500);
@@ -490,6 +610,9 @@ width: fit-content;
 .category.article-card {
     border: 1px solid var(--grey-100);
     border-radius: 12px;
+}
+body.dark-mode .category.article-card{
+    border: 1px solid #262c40;
 }
 .singleThumbnail-box{
     position: relative;
@@ -762,7 +885,7 @@ line-height: 24px; /* 150% */
  *  
  *=============================================**/
 .contact-page{
-    background: var(--blue-50);
+    background: var(--bg-light);
     width: 100%;
   
     padding: 5rem 0;
@@ -802,6 +925,7 @@ line-height: 28px;
 }
 .contact-page .item .value span{
     font-size: 1rem;
+    color: var(--grey-900);
 }
 .contact-page .title{
     margin-bottom: 0;
@@ -815,12 +939,83 @@ line-height: 28px;
     padding: 1.5rem;
 }
 .about-thumbnail{
-    position: relative;
     width: 100%;
-    height: 90%;
-    padding-top: 110%;
-    border-radius: 12px;
+    height: 100%;
+    background: url('../public/Vector.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     overflow: hidden;
+    min-height: 34rem;
+    position: relative;
+}
+.circle-1{
+    background: #fff;
+    border-radius: 50%;
+    min-width: 215px;
+    height: 215px;
+    position: absolute;
+    right: 0;
+    top: 20%;
+    box-shadow: 0px 1px 4px 0px rgba(53, 121, 253, 0.10);
+    transition: ease-in-out 0.3s all;
+
+}
+.circle-1:hover{
+    transform: scaleX(1.1) scaleY(1.1) scaleZ(1.1) rotateX(8deg) rotateY(-15deg) rotateZ(0deg) translateX(4px) translateY(3px) translateZ(-8px) skewX(0deg) skewY(0deg); 
+}
+.circle-1 .title{
+    color: var(--pumpkin-500, #FF890D);
+text-align: justify;
+font-family: 'IRANSans(FaNum)';
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+line-height: 157%; /* 50.24px */
+}
+.circle-1 .company-name{
+    color: #0D2D6A;
+text-align: justify;
+font-family: "IRANSans(FaNum)";
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 157%; /* 25.12px */
+}
+.circle-2{
+    background: #fff;
+    border-radius: 50%;
+    min-width: 300px;
+    height: 300px;
+     position: absolute;
+    left: 0;
+    top: 0;
+    box-shadow: 0px 1px 4px 0px rgba(53, 121, 253, 0.10);
+    transition: ease-in-out 0.3s all;
+}
+.circle-2:hover.circle-2 {
+    transform: scaleX(1.1) scaleY(1.1) scaleZ(1.1) rotateX(8deg) rotateY(-15deg) rotateZ(0deg) translateX(4px) translateY(3px) translateZ(-8px) skewX(0deg) skewY(0deg);
+}
+.circle-2 img{
+    padding: 3rem;
+}
+.circle-3{
+    background: #fff;
+    border-radius: 50%;
+    min-width: 120px;
+    height:120px;
+    position: absolute;
+    left: 30%;
+    top: 70%;
+    box-shadow: 0px 1px 4px 0px rgba(53, 121, 253, 0.10);
+    transition: ease-in-out 0.3s all;
+
+}
+.circle-3:hover{
+    transform: scaleX(1.1) scaleY(1.1) scaleZ(1.1) rotateX(8deg) rotateY(-15deg) rotateZ(0deg) translateX(4px) translateY(3px) translateZ(-8px) skewX(0deg) skewY(0deg);
+}
+.circle-3 img{
+    padding: 6px;
 }
 .about-thumbnail img{
     position: absolute;
@@ -989,6 +1184,25 @@ text-decoration: none;
 /**==============================================
  *              Ghallery
  *=============================================**/
+ .ghallery-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 5px;
+ }
+ .box-ghallery{
+    min-height: 15rem;
+ }
+.box-ghallery {
+    grid-area:span 3;
+  
+  }
+  .box-ghallery:nth-child(even) {
+    grid-area:span 4;
+  
+  }
+
+  
 .ghallery{
     background: var(--bg-light);
     padding: 4rem 0;
@@ -1142,6 +1356,12 @@ padding-right: 12px;
  *  
  *  
  *=============================================**/
+
+
+ .single-content > p span ,.single-content  > p ,.single-content > span{
+    background: transparent !important;
+    color: var(--text-black) !important;
+ }
 .training{
     min-height: 50rem;
 }
@@ -1548,6 +1768,142 @@ width: fit-content;
     animation: dot-move 4s 3s ease infinite;
   }
 
+/**==============================================
+ *                Chat
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+ .chat{
+    position: fixed;
+    bottom: 3%;
+    right: 20px;
+    z-index: 99;
+    width: 25rem;
+
+ }
+.chat-icon:hover{
+    cursor: pointer;
+}
+.chat-container{
+    height: 30rem;
+    background: #FFF;
+    border-radius: 8px;
+
+}
+.chat-header{
+    background: #FFF;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+}
+body.dark-mode .chat-header,body.dark-mode .chat-container{
+    background: #1E232D;
+}
+.chat-header span{
+    color: #000;
+text-align: right;
+font-family: 'IRANSans(FaNum)';
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 157%; /* 25.12px */
+}
+body.dark-mode .chat-header span{
+    color: #FFF;
+}
+.chat-main{
+    height: 25rem;
+    overflow-y: scroll;
+    background: var(--color-fff);
+    display: flex;
+    flex-direction: column;
+}
+.chat-input{
+    display: flex;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: auto;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    background: #FFF;
+    padding: 0.5rem 0;
+    border-radius: 0 0 8px 8px;
+box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+}
+body.dark-mode  .chat-input{
+    background: #1E232D;
+}
+.chat-input input{
+    flex: 1;
+    max-width: 18rem;
+    border-radius: 24px;
+    background: var(--waikawa-gray-100, #E7F0F8);
+    padding: 8px 1rem;
+    border: 0px;
+    color: var(--foundation-grey-grey-700, #707070);
+    text-align: right;
+    font-family: 'IRANSans(FaNum)';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 157%; /* 18.84px */
+    
+}
+body.dark-mode  .chat-input input{
+    background: #262C40;
+}
+.chat-input button{
+    width: 5rem;
+    border: 0;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    font-family: 'IRANSans(FaNum)';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 5px  1rem;
+    border-radius: 24px;
+    background: var(--foundation-blue-blue-600, #1B60E6);
+}
+.chat-close{
+    cursor: pointer;
+}
+.chat-main .message{
+    border-radius: 16px 16px 0px 16px;
+    background: var(--foundation-blue-blue-100, #B9D1FE);
+    padding: 0.5rem 1rem ;
+    width: fit-content;
+    display: block;
+    margin: 5px;
+    float: right;
+    color: #000;
+    text-align: right;
+    font-family: 'IRANSans(FaNum)';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 157%; /* 18.84px */
+}
+.chat-main .message.admin{
+    border-radius: 16px 16px 16px 0px;
+background: var(--pumpkin-300, #FFC86E);
+    text-align: left;
+    margin-right: auto;
+}
+
+
 
   /**==============================================
    *                Media Query
@@ -1556,23 +1912,55 @@ width: fit-content;
    *  
    *  
    *=============================================**/
+   @media screen and (max-width: 1400px) {
+    .swiper-box .swiper-slide{
+        width: 20% !important;
+    }
+    .about-thumbnail{
+        min-height: 29rem;
+    } 
+    .circle-2{
+        min-width: 260px;
+        height: 260px;
+    }
+    .circle-1{
+        min-width: 190px;
+        height: 190px;
+    }
+   }
+   @media screen and (max-width: 1200px){
+    .about-thumbnail{
+        min-height: 29rem;
+    } 
+   }
    @media screen and (max-width: 991px) {
+    .about-thumbnail {
+        min-height: 34rem;
+    }
+    .circle-2{
+        min-width: 315px;
+        height: 315px;
+    }
+    .circle-1{
+        min-width: 210px;
+        height: 210px;
+    }
     .navbar-nav .dropdown-menu{
         border: 0;
         padding-right: 1rem;
     }
     .nav-item.custom:hover{
         border-bottom: 0;
-        border-right: 1px solid var(--blue-500);
+       
     }
     .col-image-box{
         display: flex;
         justify-content: center;
     }
     .swiper-box .swiper-slide {
-        width: 50% !important;
+        width: 35% !important;
         padding: 2rem 0;
-        height: 25rem;
+        height: 15rem;
     }
     .banner-main{
         min-height: 40rem;
@@ -1604,9 +1992,9 @@ width: fit-content;
     .category-cat li{
         margin: 0 12px;
     }
-    .nav-item.custom{
+    /* .nav-item.custom{
         margin-bottom: 1rem;
-    }
+    } */
     .navbar-nav{
         padding: 1rem 0;
     }
@@ -1619,6 +2007,45 @@ width: fit-content;
     }
    }
    @media screen and (max-width: 768px) {
+    .col-image-box img{
+        width: 100%;
+    }
+    .col-image-box{
+        background: url('../public/Vectormobile.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .circle-1 .title{
+        font-size: 1rem;
+    }
+    .circle-1 .company-name{
+        font-size: 12px;
+    }
+    .circle-2 {
+        min-width: 230px;
+        height: 230px;
+    }
+    .circle-2 img{
+        padding: 2rem;
+    }
+    .about-thumbnail {
+        min-height: 26rem;
+        background: url('../public/Vectormobile.svg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .circle-1 {
+        min-width: 130px;
+        height: 130px;
+    }
+    .slider-parent{
+        width: 100%;
+    }
+    .swiper-box .swiper-slide{
+        width: 45% !important;
+    }
     .navbar-brand img{
         width: 25%;
     }
@@ -1664,9 +2091,12 @@ width: fit-content;
     text-align: center;
     }
     .advantage .title{
-        font-size: 1.5rem;
+        font-size: 1rem;
         text-align: center;
-        padding: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    .article-card-info{
+        height: 16rem;
     }
     .whay-title{
         font-size: 1.5rem;
@@ -1772,9 +2202,20 @@ width: fit-content;
     .ghallery-swp-2 .swiper-slide{
         width: 85% !important;
     }
+    .ghallery-grid{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        grid-gap: 5px;
+     }
    }
    @media screen and (max-width: 420px) {
-  
+    .circle-1 {
+        top: 45%;
+    }
+    .swiper-box .swiper-slide {
+        width: 65% !important;
+    }
     .breadcrumb-item{
         width: fit-content;
     }
@@ -1814,6 +2255,68 @@ width: fit-content;
   }
 
 
- 
-
-
+ /**========================================================================
+  *                             dark mode
+  *  
+  *  
+  *  
+  *  
+  *========================================================================**/
+  .checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+  }
+  .theme-container {
+    z-index: 999;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }
+  
+  .theme-container:hover {
+    opacity: 0.8;
+  }
+  
+  .shadow-dark {
+    background: linear-gradient(145deg, #23282c, #1e2125);
+    
+  }
+  
+  .shadow-light {
+    box-shadow: 7px 7px 15px -10px #bbcfda, -4px -4px 13px #ffffff,
+      inset 7px 7px 3px rgba(209, 217, 230, 0.35),
+      inset -11px -11px 3px rgba(255, 255, 255, 0.3)
+  }
+  
+  @keyframes change {
+    0% {
+      transform: scale(1);
+    }
+  
+    100% {
+      transform: scale(1.4);
+    }
+  }
+  
+  .change {
+    animation-name: change;
+    animation-duration: 1s;
+    animation-direction: alternate;
+  }

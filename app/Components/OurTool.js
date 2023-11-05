@@ -1,10 +1,11 @@
-"use client"
-import React from "react";
+"use client";
+import React,{useEffect} from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation,Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay } from "swiper/modules";
+import AOS from "aos";
 // Import Swiper styles
 import "swiper/css";
-import 'swiper/swiper-bundle.css';
+import "swiper/swiper-bundle.css";
 import Image from "next/image";
 //icon
 import setting from "@/public/setting.svg";
@@ -13,9 +14,13 @@ import mos from "@/public/mos.svg";
 import xsys from "@/public/xsys.svg";
 import ai from "@/public/ai.svg";
 import photoshop from "@/public/photoshop.svg";
-import circle from "@/public/circle.svg"
+import circle from "@/public/circle.svg";
 function OurTool() {
-  const list = [setting, kodak, mos, xsys, ai, photoshop,circle];
+  const list = [setting, kodak, mos, xsys, ai, photoshop, circle];
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div className="our-tool">
       <div className="container">
@@ -27,24 +32,29 @@ function OurTool() {
 
         <div className="swiper-box">
           <Swiper
-            spaceBetween={30}
-            slidesPerView={'auto'}
+            spaceBetween={15}
+            slidesPerView={"auto"}
             loop={true}
-            centeredSlides={true}
             autoplay={{
-                delay: 1000, // 2 seconds
-              }}
-              modules={[Navigation,Autoplay,]}
-              
-            
-            className="mySwiper"
+              delay: 1000, // 2 seconds
+              disableOnInteraction: false,
+            }}
+            modules={[Navigation, Autoplay]}
+            className="mySwiper ourTool"
           >
             {list &&
               list.map((item, i) => {
                 return (
                   <SwiperSlide key={i}>
-                    <div className="our-tool-img-box">
-                      <Image src={item} width={500} height={500} alt="image" />
+                    <div className="slider-parent">
+                      <div className="our-tool-img-box">
+                        <Image
+                          src={item}
+                          width={500}
+                          height={500}
+                          alt="image"
+                        />
+                      </div>
                     </div>
                   </SwiperSlide>
                 );
