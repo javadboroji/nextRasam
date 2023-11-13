@@ -14,15 +14,16 @@ const getLastArticle =async()=>{
 }
 
 async function LatestArticles() {
+ 
   const cards =await getLastArticle()
-
+  console.log(cards);
   return (
     <div className="last-article advantage">
 
       <div className="container">
       <h3 className="whay-title text-center"> آخرین مقالات</h3>
       {
-      <SliderPosts posts={cards} categorey={'categoryes'}/>
+      <SliderPosts posts={cards} categorey={'categoryes'} similr={false}/>
       }
   
     </div>  

@@ -48,7 +48,7 @@ function BreadcrumbCustom({title}) {
                     : item === "trainings"
                     ? "آموزش های فنی طراحی"
                     : item === "categoryes"
-                    ? "مقالات"
+                    ? "مقالات /دانشنامه"
                     : item}
               </>
               )}

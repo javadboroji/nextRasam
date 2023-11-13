@@ -22,7 +22,6 @@ export default function Home() {
       <Property />
       <OurTool />
       <LatestArticles />
-      <Chat />
       <FooterCustom />
     </main>
   );

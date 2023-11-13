@@ -1,7 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-
+import sun from "@/public/sun.svg"
+import moon from "@/public/moon.svg"
 function DarkMod() {
   let giveModeLocalStorage;
   let themMode;
@@ -14,7 +15,6 @@ function DarkMod() {
       // Default to true (dark mode) if there's no value in localStorage
       return localStorageMode === "dark";
     });
-  console.log(dark);
   const changeMod = () => {
     setDark(!dark);
     setDark(!dark);
@@ -32,24 +32,18 @@ function DarkMod() {
   }, [dark,themMode]);
 
   return (
-    <div className="form-check form-switch d-flex align-items-center mt-3 mt-lg-0">
-      <input
-        className="form-check-input"
-        type="checkbox"
-        id="flexSwitchCheckChecked"
-        checked={dark}
-        onChange={() => changeMod()}
-      />
-      <label className="form-check-label" htmlFor="flexSwitchCheckChecked">
+    <div className="form-check form-switch d-flex align-items-center mt-3 mt-lg-0 me-3">
+ 
        {dark? <Image
           id="theme-icon"
           width={20}
           height={20}
           alt="soon"
           style={{marginLeft:"8px"}}
+          onClick={()=>changeMod()}
           src={
               
-              "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg"
+              sun
           }
          
         />:  
@@ -57,15 +51,15 @@ function DarkMod() {
           id="theme-icon"
           width={20}
           height={20}
+          onClick={()=>changeMod()}
           style={{marginLeft:"8px"}}
           src={
-            "https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg"
+            moon
           }
           alt="sun"
         />
         } 
        
-      </label>
     </div>
   );
 }

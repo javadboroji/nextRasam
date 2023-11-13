@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 import { useCountUp } from 'react-countup';
 import Line from "@/public/line.svg";
 import Mod from "@/public/mod.svg";
-import Pen from "@/public/pen.svg";
+import users from "@/public/users.svg";
 import Lazer from "@/public/lazer.svg";
 
 function Advantages() {
@@ -19,7 +19,7 @@ function Advantages() {
 
   const { start: startCountOne } = useCountUp({ start: 0, end: 17, ref: countUpRefOne ,duration:10});
   const { start: startCountTwo } = useCountUp({ start: 0, end: 2, ref: countUpRefTwo ,duration:10});
-  const { start: startCountThree } = useCountUp({ start: 0, end: 12, ref: countUpRefThree,duration:10 });
+  const { start: startCountThree } = useCountUp({ start: 0, end: 300, ref: countUpRefThree,duration:10 });
   const { start: startCountFour } = useCountUp({ start: 0, end: 3, ref: countUpRefFour ,duration:10});
 
   useEffect(() => {
@@ -75,13 +75,13 @@ function Advantages() {
           <div className="col-12 col-md-6 col-xl-3 mb-3 mb-xl-0">
             <div className="d-flex flex-column align-items-center card-advantage">
               <div className="icon">
-                <Image src={Pen} alt="icon" />
+                <Image src={users} alt="icon" />
               </div>
               <div className="counter">
                 {" "}
                 + <span id="counters-12" ref={countUpRefThree}> {countUpRefThree.current && countUpRefThree.current.countUp}</span>
               </div>
-              <span className="title"> طراح حرفه ای </span>
+              <span className="title">   مشتری فعال </span>
             </div>
           </div>
           <div className="col-12 col-md-6 col-xl-3 mb-3 mb-xl-0">

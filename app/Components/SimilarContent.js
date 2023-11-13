@@ -2,76 +2,25 @@
 import React from "react";
 import SliderPosts from "./SliderPosts";
 import cardThumbnail from '@/public/frame-1261154708@2x.png';
+import { use } from "react";
 
+const getSimilrData =async(id)=>{
+  const api =`http://192.168.3.17:82/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=1&pageSize=10&categoryId=${id}`
+const res =await fetch(api,{cache: 'no-store' })
+if(!res.ok){
+  throw new Error('Failed to fetch data lats Article')
+}
 
-function SimilarContent({ title }) {
-  const posts= [
-    {
-      id: "f-1",
-      title: " کیفیت رنگ اضافی در چاپ افست تغذیه ورقی",
-      description:
-        " روشهای اندازه گیری بسیار دقیق و اثبات شده توام با سیستمهای پیش تنظیم مطلوب و مهندسی چاپ زمان تطبیق رنگ و تغییرات در خلال تولید را حداقل می‌سازد.",
-      image: cardThumbnail,
-      date: "1402/05/12",
-      like: 12,
-      comment: 2,
-    },
-    {
-      id: "f-2",
-      title: " کیفیت رنگ اضافی در چاپ افست تغذیه ورقی",
-      description:
-        " روشهای اندازه گیری بسیار دقیق و اثبات شده توام با سیستمهای پیش تنظیم مطلوب و مهندسی چاپ زمان تطبیق رنگ و تغییرات در خلال تولید را حداقل می‌سازد.",
-      image: cardThumbnail,
-      date: "1402/05/12",
-      like: 12,
-      comment: 2,
-    },
-    {
-      id: "f-3",
-      title: " کیفیت رنگ اضافی در چاپ افست تغذیه ورقی",
-      description:
-        " روشهای اندازه گیری بسیار دقیق و اثبات شده توام با سیستمهای پیش تنظیم مطلوب و مهندسی چاپ زمان تطبیق رنگ و تغییرات در خلال تولید را حداقل می‌سازد.",
-      image: cardThumbnail,
-      date: "1402/05/12",
-      like: 12,
-      comment: 2,
-    },
-    {
-      id: "f-4",
-      title: " کیفیت رنگ اضافی در چاپ افست تغذیه ورقی",
-      description:
-        " روشهای اندازه گیری بسیار دقیق و اثبات شده توام با سیستمهای پیش تنظیم مطلوب و مهندسی چاپ زمان تطبیق رنگ و تغییرات در خلال تولید را حداقل می‌سازد.",
-      image: cardThumbnail,
-      date: "1402/05/12",
-      like: 12,
-      comment: 2,
-    },
-    {
-      id: "f-5",
-      title: " کیفیت رنگ اضافی در چاپ افست تغذیه ورقی",
-      description:
-        " روشهای اندازه گیری بسیار دقیق و اثبات شده توام با سیستمهای پیش تنظیم مطلوب و مهندسی چاپ زمان تطبیق رنگ و تغییرات در خلال تولید را حداقل می‌سازد.",
-      image: cardThumbnail,
-      date: "1402/05/12",
-      like: 12,
-      comment: 2,
-    },
-    {
-      id: "f-6",
-      title: " کیفیت رنگ اضافی در چاپ افست تغذیه ورقی",
-      description:
-        " روشهای اندازه گیری بسیار دقیق و اثبات شده توام با سیستمهای پیش تنظیم مطلوب و مهندسی چاپ زمان تطبیق رنگ و تغییرات در خلال تولید را حداقل می‌سازد.",
-      image: cardThumbnail,
-      date: "1402/05/12",
-      like: 12,
-      comment: 2,
-    },
-  ];
+return res.json()
+}
+
+function SimilarContent({ title ,catId,postId}) {
+  const {data} = use(getSimilrData(catId));
   return (
     <div className="similar">
       <div className="container">
         <p>{title}</p>
-        <SliderPosts posts={posts}/>
+        <SliderPosts posts={data} categorey={"categoryes"} similr={true} notShowPost={postId}/>
       </div>
     </div>
   );

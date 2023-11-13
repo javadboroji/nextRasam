@@ -24,8 +24,11 @@ if(!res.ok){
 
 return res.json()
 }
- function page({ params }) {
-  const {data} = use(getSigleData(params.id))
+ function page({ params,searchParams }) {
+
+  const {data} = use(getSigleData(params.id));
+
+  const categoryId =searchParams.catId;
   return (
     <>
       <HeaderCustome />
@@ -59,7 +62,7 @@ return res.json()
  }       
 
           {/* simlar  */}
-          <SimilarContent title={'مطالب مشابه '}/>
+          <SimilarContent title={'مطالب مشابه '} catId={categoryId} similr={true} postId={params.id}/>
         <FooterCustom />
       </div>
     </>

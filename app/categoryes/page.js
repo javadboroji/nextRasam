@@ -1,11 +1,8 @@
 import React from "react";
 import "@/app/custome.css";
-import HeaderCustome from "../Components/HeaderCustome";
-import FooterCustom from "../Components/FooterCustom";
 import CatList from "../Components/CatList/CatList";
 import LayoutPage from "../Components/LayoutPage";
 import CatSideBar from "../Components/CatSideBar/CatSideBar";
-import PagenatinCustom from "../Components/PagenatinCustom/PagenatinCustom";
 
 function page() {
   return (

@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from "react";
 import chat from "@/public/chat-message-1.svg";
 import Image from "next/image";
+import * as signalR from "@microsoft/signalr";
+import ChatRecive from "./ChatRecive";
 function Chat() {
   const [showChat, setShowChat] = useState(false);
     const [message, setMessage] = useState('')
@@ -11,13 +13,39 @@ function Chat() {
   const inpOnchange=(e)=>{
     setMessage(e.target.value)
   }
-  const sendMessageHandler=()=>{
-    console.log(message);
-  }
+
 
   const closeChat =()=>{
     setShowChat(false)
   }
+
+
+  /**==============================================
+   *                SignalR config
+   *  
+   *  
+   *  
+   *  
+   *=============================================**/
+  let connection = new signalR.HubConnectionBuilder()
+  .withUrl("http://192.168.3.17:82/SignalRHub")
+  .withAutomaticReconnect()
+  .build();
+  
+  const sendMessageHandler=()=>{
+    connection.start().then(()=>{
+      console.log("start");
+      connection.send('sendMessage',message)
+       connection.on("reciveMessage",)  
+    })
+    .then(()=>connection.stop());
+    setMessage('')
+  }
+useEffect(() => {
+
+}, [message])
+
+
   return (
     <div className="chat">
         {!showChat  &&<Image
@@ -26,7 +54,6 @@ function Chat() {
         className="chat-icon"
         onClick={() => chatClickHandler()}
       />}
-     
 
       {showChat && (
         <div className="chat-container">
@@ -40,10 +67,11 @@ function Chat() {
             <p className="message"> ???!</p>
             <p className="message admin"> سلام بفرمایید</p>
             <p className="message admin"> بله  </p>
+            
           </div>
           <div className="chat-input">
-            <input type="text" onChange={(e)=>inpOnchange(e)} placeholder="نوشتن ..."/>
-            <button onClick={()=>sendMessageHandler()} value={message}> ارسال</button>
+            <input type="text" onChange={(e)=>inpOnchange(e)} value={message} placeholder="نوشتن ..."/>
+            <button onClick={sendMessageHandler} > ارسال</button>
           </div>
         </div>
       )}

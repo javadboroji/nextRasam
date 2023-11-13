@@ -15,8 +15,11 @@ import xsys from "@/public/xsys.svg";
 import ai from "@/public/ai.svg";
 import photoshop from "@/public/photoshop.svg";
 import circle from "@/public/circle.svg";
+import esko from "@/public/esko.svg";
+import dupont from "@/public/dupont.svg";
+
 function OurTool() {
-  const list = [setting, kodak, mos, xsys, ai, photoshop, circle];
+  const list = [setting, kodak, mos, xsys, ai, photoshop, circle,dupont,esko];
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -36,8 +39,9 @@ function OurTool() {
             slidesPerView={"auto"}
             loop={true}
             autoplay={{
-              delay: 1000, // 2 seconds
+              delay: 1000, 
               disableOnInteraction: false,
+              stopOnLastSlide: false,
             }}
             modules={[Navigation, Autoplay]}
             className="mySwiper ourTool"

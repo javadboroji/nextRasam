@@ -50,6 +50,7 @@ function CatList() {
       AOS.init();
       AOS.refresh();
   }, [search ,currentPage]);
+  console.log(data);
 
 useEffect(() => {
   setCurrentPage(1)
@@ -88,7 +89,7 @@ useEffect(() => {
                   <Link
                     href={{
                       pathname: `categoryes/${post.newsId}`,
-                      query: { name: post.title },
+                      query: { name: post.title ,catId:post.categoryId },
                     }}
                     className="card-more-link"
                   >
