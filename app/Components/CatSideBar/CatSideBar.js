@@ -46,7 +46,7 @@ function CatSideBar() {
 
   const memoizedCatSidebar = useMemo(() => {
     return (
-      <>
+      <div style={{position:'static',top:'0'}}>
         <InputSearch
 
         />
@@ -95,7 +95,7 @@ function CatSideBar() {
               })}
           </ul>
         </div>
-      </>
+      </div>
     );
   }, [data, id]);
 

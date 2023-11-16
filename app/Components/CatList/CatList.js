@@ -18,7 +18,7 @@ function CatList() {
  *  
  *  
  *=============================================**/
-  const itemsPerPage = 4;
+  const itemsPerPage = 9;
   const [currentPage, setCurrentPage] = useState(1);
 
 /**==============================================
@@ -31,7 +31,8 @@ function CatList() {
   const [data, setData] = useState("");
   const searchParams = useSearchParams();
   const search = searchParams.get("id");
-  
+ const [totalCount, setTotalCount] = useState(null)
+ const [error, setError] = useState('')
   const api = `http://192.168.3.17:82/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
   useEffect(() => {
     fetch(api)
@@ -43,6 +44,7 @@ function CatList() {
       })
       .then((responseData) => {
         setData(responseData);
+        setTotalCount(responseData.data[0].totalCount);
       })
       .catch((err) => {
         setError(err);
@@ -50,60 +52,66 @@ function CatList() {
       AOS.init();
       AOS.refresh();
   }, [search ,currentPage]);
-  console.log(data);
-
 useEffect(() => {
-  setCurrentPage(1)
+  setCurrentPage(1);
 }, [search])
 
 
-
-  return (
-    <>
-      {data &&
-        data.data.map((post) => {
-          return (
-            <div className="col-12 col-lg-4 mb-3" key={post.newsId}  data-aos="flip-left"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="2000" >
-              <div className="article-card d-flex flex-column category ">
-                <div className="thumbnail">
-                  <ImageBas64 url={post.imageFile} />
-                </div>
-                <div className="article-card-info">
-                  <div className="d-flex justify-content-between  py-1">
-                    <span className="date"> {post.persianPublishDate}</span>
-                    <div className="d-flex">
-                      <span className="like-count">{post.numberOfLike}</span>
-                      <Image src={like} alt="like " className="ms-3" />
-                      <span className="comment-count">
-                        {post.numberOfComments}
-                      </span>
-                      <Image src={comment} alt="comment" />
-                    </div>
+return (
+  <>
+    {data ?
+      data.data.map((post) => {
+        return (  
+          <div className="col-12 col-lg-4 mb-3" key={post.newsId}  data-aos="flip-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000" >
+            <div className="article-card d-flex flex-column category ">
+              <div className="thumbnail">
+              <Link
+                  href={{
+                    pathname: `categoryes/${post.newsId}`,
+                    query: { name: post.title ,catId:post.categoryId },
+                  }}
+                >
+                <ImageBas64 url={post.imageFile} />
+                </Link>
+              </div>
+              <div className="article-card-info">
+                <div className="d-flex justify-content-between  py-1">
+                  <span className="date"> {post.persianPublishDate}</span>
+                  <div className="d-flex">
+                    <span className="like-count">{post.numberOfLike}</span>
+                    <Image src={like} alt="like " className="ms-3" />
+                    <span className="comment-count">
+                      {post.numberOfComments}
+                    </span>
+                    <Image src={comment} alt="comment" />
                   </div>
-                  <p className="title ">{post.title}</p>
-                  <span className="description card-description">
-                    {post.shortTitle}
-                  </span>
-                  <Link
-                    href={{
-                      pathname: `categoryes/${post.newsId}`,
-                      query: { name: post.title ,catId:post.categoryId },
-                    }}
-                    className="card-more-link"
-                  >
-                    ادامه مطلب
-                    <Image src={arrow} alt="arrow" />
-                  </Link>
                 </div>
+                <p className="title ">{post.shortTitle}</p>
+                <span className="description card-description">
+                  {post.abstract}
+                </span>
+                <Link
+                  href={{
+                    pathname: `categoryes/${post.newsId}`,
+                    query: { name: post.title ,catId:post.categoryId },
+                  }}
+                  className="card-more-link"
+                >
+                  ادامه مطلب
+                  <Image src={arrow} alt="arrow" />
+                </Link>
               </div>
             </div>
-          );
-        })}
-      {data&&<PagenatinCustom data={data.data} itemsPerPage={itemsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage}/>}
-    </>
-  );
+       
+          </div>
+        );
+      }):<p className="mt-3"> موردی یافت نشد</p>}
+    {data&&<PagenatinCustom data={data.data} itemsPerPage={itemsPerPage} currentPage={currentPage} setCurrentPage={setCurrentPage} totalCount={totalCount}/>}
+  </>
+);
+  
 }
 
 export default CatList;

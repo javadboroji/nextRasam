@@ -16,7 +16,6 @@ const getLastArticle =async()=>{
 async function LatestArticles() {
  
   const cards =await getLastArticle()
-  console.log(cards);
   return (
     <div className="last-article advantage">
 

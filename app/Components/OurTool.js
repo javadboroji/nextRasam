@@ -27,7 +27,7 @@ function OurTool() {
   return (
     <div className="our-tool">
       <div className="container">
-        <h3 className="title whay-title"> ابزارهای ما </h3>
+        <h3 className="title whay-title" id="animation-our-tool"> ابزارهای ما </h3>
         <span className="description">
           تیم رسام همواره تلاش نموده تا از بروز ترین و با کیفیت ترین ابزار ها در
           راستای بر طرف نمودن نیاز مشتریان استفاده کند.

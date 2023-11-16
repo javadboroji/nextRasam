@@ -4,10 +4,11 @@ import "@/app/custome.css";
 import aboutImage from "@/public/worksss.svg";
 import whay from "@/public/quizeIcon.svg";
 import dynamic from "next/dynamic";
-const BreadcrumbCustom = dynamic(
-  () => import("@/app/Components/BreadcrumbCustom"),
-  { ssr: false }
-);
+import BreadcrumbCustom from "@/app/Components/BreadcrumbCustom";
+// const BreadcrumbCustom = dynamic(
+//   () => import("@/app/Components/BreadcrumbCustom"),
+//   { ssr: false }
+// );
 const MapLeft = dynamic(() => import("@/app/Components/MapLeft"), {
   ssr: false,
 });

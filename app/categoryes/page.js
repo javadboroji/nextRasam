@@ -17,7 +17,7 @@ function page() {
                     <CatList />
                   </div>
                 </div>
-                <div className="col-12 col-lg-3 order-0 order-lg-1">
+                <div className="col-12 col-lg-3 order-0 order-lg-1 position-reletive">
                   <CatSideBar />
                 </div>
               </div>

@@ -17,7 +17,6 @@ function SliderPosts({ posts, categorey, similr, notShowPost }) {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-    console.log(posts);
   }, []);
 
   if (!similr) {
@@ -52,43 +51,60 @@ function SliderPosts({ posts, categorey, similr, notShowPost }) {
                 data-aos-easing="ease-out-cubic"
                 data-aos-duration="2000"
               >
-                <div className="article-card d-flex flex-column ">
-                  <div className="thumbnail">
-                    <ImageBas64 url={item.imageFile} />
-                  </div>
-                  <div className="article-card-info">
-                    <div className="d-flex justify-content-between  py-1">
-                      <span className="date"> {item.PersianPublishDate}</span>
-                      <div className="d-flex">
-                        <span className="like-count">{item.NumberOfLike}</span>
-                        <Image src={like} alt="like " className="ms-3" />
-                        <span className="comment-count">
-                          {item.NumberOfComments}
+                
+                  
+                    <div className="article-card d-flex flex-column ">
+                      <div className="thumbnail">
+                      <Link
+                    href={{
+                      pathname: `${categorey}/${item.Id}`,
+                      query: { name: item.Title, catId: item.CategoryId },
+                    }}
+                  >
+                        <ImageBas64 url={item.imageFile} />
+                        </Link>
+                      </div>
+                      <div className="article-card-info">
+                        <div className="d-flex justify-content-between  py-1">
+                          <span className="date">
+                            {" "}
+                            {item.PersianPublishDate}
+                          </span>
+                          <div className="d-flex">
+                            <span className="like-count">
+                              {item.NumberOfLike}
+                            </span>
+                            <Image src={like} alt="like " className="ms-3" />
+                            <span className="comment-count">
+                              {item.NumberOfComments}
+                            </span>
+                            <Image src={comment} alt="comment" />
+                          </div>
+                        </div>
+                        <p className="title ">{item.ShortTitle}</p>
+                        <span className="description card-description">
+                          {item.abstract}
                         </span>
-                        <Image src={comment} alt="comment" />
+                        <div className="d-flex justify-content-between align-items-baseline">
+                          <span className="baget-post">
+                            {item.NameOfCategories}
+                          </span>
+                          <Link
+                            href={{
+                              pathname: `${categorey}/${item.Id}`,
+                              query: {
+                                name: item.Title,
+                                catId: item.CategoryId,
+                              },
+                            }}
+                            className="card-more-link"
+                          >
+                            ادامه مطلب
+                            <Image src={arrow} alt="arrow" />
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                    <p className="title ">{item.Title}</p>
-                    <span className="description card-description">
-                      {item.ShortTitle}
-                    </span>
-                    <div className="d-flex justify-content-between align-items-baseline">
-                      <span className="baget-post">
-                        {item.NameOfCategories}
-                      </span>
-                      <Link
-                        href={{
-                          pathname: `${categorey}/${item.Id}`,
-                          query: { name: item.Title, catId: item.CategoryId },
-                        }}
-                        className="card-more-link"
-                      >
-                        ادامه مطلب
-                        <Image src={arrow} alt="arrow" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
               </SwiperSlide>
             );
           })}
@@ -118,7 +134,6 @@ function SliderPosts({ posts, categorey, similr, notShowPost }) {
       >
         {posts &&
           posts.map((item) => {
-           
             if (notShowPost !== item.newsId) {
               return (
                 <SwiperSlide
@@ -128,45 +143,58 @@ function SliderPosts({ posts, categorey, similr, notShowPost }) {
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000"
                 >
-                  <div className="article-card d-flex flex-column ">
-                    <div className="thumbnail">
-                      <ImageBas64 url={item.imageFile} />
-                    </div>
-                    <div className="article-card-info">
-                      <div className="d-flex justify-content-between  py-1">
-                        <span className="date"> {item.persianPublishDate}</span>
-                        <div className="d-flex">
-                          <span className="like-count">
-                            {item.numberOfLike}
-                          </span>
-                          <Image src={like} alt="like " className="ms-3" />
-                          <span className="comment-count">
-                            {item.numberOfComments}
-                          </span>
-                          <Image src={comment} alt="comment" />
-                        </div>
-                      </div>
-                      <p className="title ">{item.title}</p>
-                      <span className="description card-description">
-                        {item.shortTitle}
-                      </span>
-                      <div className="d-flex justify-content-between align-items-baseline">
-                        <span className="baget-post">
-                          {item.nameOfCategories}
-                        </span>
+                      <div className="article-card d-flex flex-column ">
+                        <div className="thumbnail">
                         <Link
-                          href={{
-                            pathname: `/${categorey}/${item.newsId}`,
-                            query: { name: item.title, catId: item.categoryId },
-                          }}
-                          className="card-more-link"
-                        >
-                          ادامه مطلب
-                          <Image src={arrow} alt="arrow" />
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                      href={{
+                        pathname: `/${categorey}/${item.newsId}`,
+                        query: { name: item.title, catId: item.categoryId },
+                      }}
+                    >
+                          <ImageBas64 url={item.imageFile} />
+                          </Link>
+                        </div>
+                        <div className="article-card-info">
+                          <div className="d-flex justify-content-between  py-1">
+                            <span className="date">
+                              {" "}
+                              {item.persianPublishDate}
+                            </span>
+                            <div className="d-flex">
+                              <span className="like-count">
+                                {item.numberOfLike}
+                              </span>
+                              <Image src={like} alt="like " className="ms-3" />
+                              <span className="comment-count">
+                                {item.numberOfComments}
+                              </span>
+                              <Image src={comment} alt="comment" />
+                            </div>
+                          </div>
+                          <p className="title ">{item.shortTitle}</p>
+                          <span className="description card-description">
+                            {item.abstract}
+                          </span>
+                          <div className="d-flex justify-content-between align-items-baseline">
+                            <span className="baget-post">
+                              {item.nameOfCategories}
+                            </span>
+                            <Link
+                              href={{
+                                pathname: `/${categorey}/${item.newsId}`,
+                                query: {
+                                  name: item.title,
+                                  catId: item.categoryId,
+                                },
+                              }}
+                              className="card-more-link"
+                            >
+                              ادامه مطلب
+                              <Image src={arrow} alt="arrow" />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>                  
                 </SwiperSlide>
               );
             }

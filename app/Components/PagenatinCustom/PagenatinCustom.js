@@ -1,10 +1,10 @@
 import React from "react";
 
-function PagenatinCustom({ data, setCurrentPage, itemsPerPage, currentPage }) {
+function PagenatinCustom({ data, setCurrentPage, itemsPerPage, currentPage ,totalCount}) {
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentItems = data?.slice(indexOfFirstItem, indexOfLastItem);
-  const totalItems = 6;
+  const totalItems = totalCount?totalCount :20;
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
     pageNumbers.push(i);
