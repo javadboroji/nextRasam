@@ -15,6 +15,7 @@ import Chat from "./Components/Chat/Chat";
 export default function Home() {
   return (
     <main className={styles.main}>
+
       <HeaderCustome />
       <BannerHome />
       <Advantages />

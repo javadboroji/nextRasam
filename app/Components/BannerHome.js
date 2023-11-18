@@ -2,6 +2,7 @@
 function BannerHome() {
   return (
     <div className="banner-main d-flex justify-content-center position-absolut">
+      
       <div className="banner-content  d-flex align-items-center">
         <div className="container">
           <div className="row d-flex  ">

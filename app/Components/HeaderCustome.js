@@ -104,11 +104,11 @@ const HeaderCustome = () => {
                     </li>
                   );
                 })}
-              {/* <li className="nav-item custom px-2 ">
-                <Link className="nav-link menu-text" href={"/trainings"}>
-                  آموزش های فنی طراحی
+              <li className="nav-item custom px-2 ">
+                <Link className="nav-link menu-text" href={"/video"}>
+                   ویدیوهای آموزشی
                 </Link>
-              </li> */}
+              </li>
               <li className="nav-item custom px-2 ">
                 <Link className="nav-link menu-text" href={"/ghallery"}>
                   گالری تصاویر

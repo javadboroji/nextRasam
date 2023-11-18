@@ -7,6 +7,9 @@ import Link from "next/link";
 import arrow from "@/public/Arrow, left.svg";
 import Image from "next/image";
 
+
+
+
 function BreadcrumbCustom({ title }) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -14,9 +17,9 @@ function BreadcrumbCustom({ title }) {
   const pathNames = paths.split("/").filter((path) => path);
   const api =`http://192.168.3.17:82/api/v1/Category/GetBreadCrumbByCategory?articleId=${pathNames[1]}`;
   const [error, setError] = useState(null);                   
-  const [breadcrumbCat, setBreadcrumbCat] = useState('')
+  const [breadcrumbCat, setBreadcrumbCat] = useState([]);
+
   useEffect(() => {
-    console.log("true");
     fetch(api,{ revalidateOnFocus: false })
     .then((response) => {
       if (!response.ok) {
@@ -26,19 +29,24 @@ function BreadcrumbCustom({ title }) {
     })
     .then((responseData) => {
       setBreadcrumbCat(responseData.data);
-      
     })
     .catch((err) => {
       setError(err);
     });
+  
     
   }, [])
+  /**=======================
+   *     GetCategorey
+   *  
+   *  
+   *========================**/
   return (
     <div className="container-fluid container-lg d-flex justify-content-between align-items-baseline pe-0 mt-5 mt-lg-0">
       <ul className="breadcrumb-ul ">
         {pathNames && (
-          <li className="breadcrumb-item">
-            <Link href="/"> صفحه اصلی</Link>
+          <li className="breadcrumb-item ">
+            <Link href="/" className="active breadcrumb-item-active"> صفحه اصلی</Link>
           </li>
         )}
         {pathNames &&
@@ -54,7 +62,10 @@ function BreadcrumbCustom({ title }) {
                     "آموزش های فنی طراحی"
                   ) : item === "categoryes" ? (
                     "مقالات"
-                  ) : title ? (
+                    ):item==="video"?(
+                      "ویدیوها"
+                    )
+                   : title ? (
                     title
                   ) : (
                     item
@@ -68,7 +79,7 @@ function BreadcrumbCustom({ title }) {
                       : item === "trainings"
                       ? "آموزش های فنی طراحی"
                       : item === "categoryes"
-                      ? breadcrumbCat
+                      ? breadcrumbCat.map(catName=> <Link  href={{pathname:"/categoryes" ,query:{id:catName.id}}} className="breadcrumb-item breadcrumb-item-active"> {catName.categoryName}</Link>)
                       : item}
                   </>
                 )}

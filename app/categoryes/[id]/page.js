@@ -34,6 +34,7 @@ export default async function page({ params, searchParams }) {
     data = await getSigleData(params.id);
   }
   const categoryId = searchParams.catId;
+
   return (
     <>
       <LayoutPage>

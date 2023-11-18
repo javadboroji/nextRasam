@@ -1306,11 +1306,23 @@ text-transform: uppercase;
     position: relative;
 }
 .breadcrumb-item::after{
-    content: '>';
+    content: '/';
     position: absolute;
     top: 3px;
     left: 0;
 }
+.breadcrumb-item-active:hover{
+    color: var(--blue-500);
+}
+.breadcrumb-item-active{
+    position: relative;
+}
+/* .breadcrumb-item-active::before{
+    content: '/';
+    position: absolute;
+    top: 3px;
+    left: 0;
+} */
 .breadcrumb-item:last-child::after{
     display: none;
 }
@@ -2149,6 +2161,39 @@ background: var(--pumpkin-300, #FFC86E);
     display: flex;
     justify-content: flex-end;
 }
+
+/**==============================================
+ *                Video
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+ .video-content{
+    min-height: 15rem;
+    padding: 2rem 0;
+ }
+ .video-box{
+    min-height: 10rem;
+
+ }
+ .video-title{
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    padding: 0.5rem;
+    color: var(--text-black);
+ }
+ .video-hover{
+    transition: ease-in-out 0.3s all;
+    border-radius: 8px;
+    box-shadow: 0 5px 11px rgba(0, 0, 0, 0.14);
+ }
+ .video-hover:hover{
+
+    cursor: pointer;
+ }
   /**==============================================
    *                Media Query
    *  

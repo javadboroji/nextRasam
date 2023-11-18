@@ -59,6 +59,7 @@ useEffect(() => {
 
 return (
   <>
+  
     {data ?
       data.data.map((post) => {
         return (  
