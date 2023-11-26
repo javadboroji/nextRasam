@@ -10,7 +10,7 @@ import DarkMod from "./DarkMod";
 
 export function Menus(){
   const fetcher = async () => {
-    const res = await fetch("http://192.168.3.17:82/api/v1/Category/GetCategories");
+    const res = await fetch("http://185.103.129.113:82/api/v1/Category/GetCategories");
     const { data } = await res.json();
     return data;
   };
@@ -127,7 +127,8 @@ const HeaderCustome = () => {
               style={{ marginTop: "0" }}
               type="submit"
             >
-              ثبت سفارش
+              <Link href={'https://formafzar.com/RhtudQdy6L/formLogin/3'}> ثبت سفارش </Link>
+             
             </button>
             <DarkMod />
            </div>

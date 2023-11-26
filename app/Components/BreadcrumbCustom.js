@@ -15,7 +15,7 @@ function BreadcrumbCustom({ title }) {
   const router = useRouter();
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
-  const api =`http://192.168.3.17:82/api/v1/Category/GetBreadCrumbByCategory?articleId=${pathNames[1]}`;
+  const api =`http://185.103.129.113:82/api/v1/Category/GetBreadCrumbByCategory?articleId=${pathNames[1]}`;
   const [error, setError] = useState(null);                   
   const [breadcrumbCat, setBreadcrumbCat] = useState([]);
 
@@ -79,7 +79,7 @@ function BreadcrumbCustom({ title }) {
                       : item === "trainings"
                       ? "آموزش های فنی طراحی"
                       : item === "categoryes"
-                      ? breadcrumbCat.map(catName=> <Link  href={{pathname:"/categoryes" ,query:{id:catName.id}}} className="breadcrumb-item breadcrumb-item-active"> {catName.categoryName}</Link>)
+                      ? breadcrumbCat.map(catName=> <Link key={catName.id}  href={{pathname:"/categoryes" ,query:{id:catName.id}}} className="breadcrumb-item breadcrumb-item-active"> {catName.categoryName}</Link>)
                       : item}
                   </>
                 )}

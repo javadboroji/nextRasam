@@ -1,4 +1,4 @@
-
+import Link from "next/link";
 function BannerHome() {
   return (
     <div className="banner-main d-flex justify-content-center position-absolut">
@@ -21,8 +21,7 @@ function BannerHome() {
                   کداک قابلیت تولید این محصول با کیفیت بسیار بالا را دارد.
                 </span>
                 <button type="button" className=" btn-blue-gradient">
-                  {" "}
-                  ثبت سفارش
+                <Link href={'https://formafzar.com/RhtudQdy6L/formLogin/3'}> ثبت سفارش </Link>
                 </button>
               </div>
             </div>

@@ -137,7 +137,7 @@ function SliderPosts({ posts, categorey, similr, notShowPost }) {
             if (notShowPost !== item.newsId) {
               return (
                 <SwiperSlide
-                  key={item.id}
+                  key={item.newsId}
                   className="article-swiper-slide"
                   data-aos="flip-left"
                   data-aos-easing="ease-out-cubic"

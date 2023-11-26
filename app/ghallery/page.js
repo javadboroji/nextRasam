@@ -6,6 +6,10 @@ import dynamic from 'next/dynamic'
 const BreadcrumbCustom =dynamic(()=>import("@/app/Components/BreadcrumbCustom"),{ssr:false })  ;
 import GhallerySwiper from "./GhallerySwiper";
 import LayoutPage from "../Components/LayoutPage";
+export const metadata  = {
+  title: 'گالری تصاویر',
+  description: 'گالری تصاویر',
+}
 function Ghallery() {
   return (
       <LayoutPage>

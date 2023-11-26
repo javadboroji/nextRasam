@@ -4,11 +4,10 @@ import "@/app/custome.css";
 import aboutImage from "@/public/worksss.svg";
 import whay from "@/public/quizeIcon.svg";
 import dynamic from "next/dynamic";
-import BreadcrumbCustom from "@/app/Components/BreadcrumbCustom";
-// const BreadcrumbCustom = dynamic(
-//   () => import("@/app/Components/BreadcrumbCustom"),
-//   { ssr: false }
-// );
+const BreadcrumbCustom = dynamic(
+  () => import("@/app/Components/BreadcrumbCustom"),
+  { ssr: false }
+);
 const MapLeft = dynamic(() => import("@/app/Components/MapLeft"), {
   ssr: false,
 });
@@ -20,7 +19,10 @@ import mailBox from "@/public/Mailbox.svg";
 import mail from "@/public/Mail.svg";
 import Image from "next/image";
 import LayoutPage from "../Components/LayoutPage";
-
+export const metadata  = {
+  title: 'تماس با ما',
+  description: 'صفحه تماس با ما',
+}
 function Contact() {
   return (
     <>

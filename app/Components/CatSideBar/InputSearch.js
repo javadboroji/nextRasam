@@ -2,13 +2,13 @@
 import React,{useState} from 'react'
 import Image from "next/image";
 import search from "@/public/search-loupe.svg";
-import { useThemeContext } from '@/app/context/theme';
+//import { useThemeContext } from '@/app/context/theme';
 function InputSearch() {
-    const{inputSearch,setInputSearch}=useThemeContext()
+    //const{inputSearch,setInputSearch}=useThemeContext()
     
-
+    const [inputSearch, setInputSearch] = useState('')
     const inpHandler = (e) => {
-      setInputSearch(e.target.value);
+      //setInputSearch(e.target.value);
     }
   
     const searchSubmit = () => {

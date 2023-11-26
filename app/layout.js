@@ -3,7 +3,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Head from "next/head"; // Import the Head component
 import Script from "next/script";
-import { ThemeContextProvider } from "./context/theme";
+//import { ThemeContextProvider } from "./context/theme";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -26,9 +26,9 @@ export default function RootLayout({ children }) {
       </Head>
       <Script src="https://static.neshan.org/sdk/leaflet/v1.9.4/neshan-sdk/v1.0.8/index.js"></Script>
       <body className={inter.className}>
-        <ThemeContextProvider>
+     
         {children}
-        </ThemeContextProvider>
+       
       
         </body>
     </html>

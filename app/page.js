@@ -11,7 +11,6 @@ import FooterCustom from "./Components/FooterCustom";
 import LatestArticles from "./Components/LatestArticles";
 import Loading from "./Components/Loading";
 import DarkMod from "./Components/DarkMod";
-import Chat from "./Components/Chat/Chat";
 export default function Home() {
   return (
     <main className={styles.main}>
