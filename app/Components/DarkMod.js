@@ -4,10 +4,9 @@ import Image from "next/image";
 import sun from "@/public/sun.svg"
 import moon from "@/public/moon.svg"
 function DarkMod() {
-  let giveModeLocalStorage;
-  let themMode;
-    giveModeLocalStorage = localStorage?.getItem("themMode") || "";
-    themMode = localStorage.getItem("themMode");
+
+   const giveModeLocalStorage = localStorage?.getItem("themMode") || "";
+   const themMode = localStorage.getItem("themMode");
   
 
     const [dark, setDark] = useState(() => {

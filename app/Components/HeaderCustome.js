@@ -10,7 +10,7 @@ import DarkMod from "./DarkMod";
 
 export function Menus(){
   const fetcher = async () => {
-    const res = await fetch("http://185.103.129.113:82/api/v1/Category/GetCategories");
+    const res = await fetch("http://185.103.129.113:80/api/v1/Category/GetCategories");
     const { data } = await res.json();
     return data;
   };
@@ -37,13 +37,7 @@ const HeaderCustome = () => {
   const drodownHandler = () => {
     setDropDown(() => !dropDown);
   };
-  if(isLoading){
-    return(<p> درحال بارگزاری ....</p>)
-  } 
-  if( error){
-    return(<p> خطا ....</p>)
-
-  }
+  
 
   return (
     <div
@@ -79,7 +73,7 @@ const HeaderCustome = () => {
           >
             <ul className="navbar-nav  mb-2 mb-lg-0 me-5">
               {data &&
-                data.map((item, i) => {
+                data?.map((item, i) => {
                   return (
                     <li className={`nav-item custom ${item.subs&& 'sub-menu'} px-2`} key={item.id}>
                       <Link className='nav-link menu-text' href={{pathname:"/categoryes" ,query:{id:item.id,catParent:item.id}}}>

@@ -33,7 +33,7 @@ function CatList() {
   const search = searchParams.get("id");
  const [totalCount, setTotalCount] = useState(null)
  const [error, setError] = useState('')
-  const api = `http://185.103.129.113:82/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
+  const api = `http://185.103.129.113:80/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
   useEffect(() => {
     fetch(api)
       .then((response) => {
