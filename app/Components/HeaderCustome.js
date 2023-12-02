@@ -10,7 +10,7 @@ import DarkMod from "./DarkMod";
 
 export function Menus(){
   const fetcher = async () => {
-    const res = await fetch("http://185.103.129.113:80/api/v1/Category/GetCategories");
+    const res = await fetch("http://webapp.rasamflexo.ir/api/v1/Category/GetCategories");
     const { data } = await res.json();
     return data;
   };

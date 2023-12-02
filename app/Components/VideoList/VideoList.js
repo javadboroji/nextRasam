@@ -3,7 +3,7 @@ import React, {  } from "react";
 import useSWR from "swr";
 
 const fetcher = async () => {
-  const res = await fetch("http://185.103.129.113:80/api/v1/Video",{cache: 'no-store' });
+  const res = await fetch("http://webapp.rasamflexo.ir/api/v1/Video",{cache: 'no-store' });
   if(!res.ok){
     throw new Error('Failed to fetch data lats Article')
   }

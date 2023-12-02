@@ -12,7 +12,7 @@ function BreadcrumbCustom({ title }) {
   const router = useRouter();
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
-  const api = `http://185.103.129.113:80/api/v1/Category/GetBreadCrumbByCategory?articleId=${pathNames[1]}`;
+  const api = `http://webapp.rasamflexo.ir/api/v1/Category/GetBreadCrumbByCategory?articleId=${pathNames[1]}`;
   const [error, setError] = useState(null);
   const [breadcrumbCat, setBreadcrumbCat] = useState([]);
 
