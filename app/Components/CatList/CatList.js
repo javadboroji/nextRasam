@@ -9,6 +9,7 @@ import Link from "next/link";
 import ImageBas64 from "@/app/Components/ImageBas64/ImageBas64";
 import PagenatinCustom from "../PagenatinCustom/PagenatinCustom";
 import AOS from "aos";
+import Loading from "../Loading";
 function CatList() {
 
 /**==============================================
@@ -32,9 +33,11 @@ function CatList() {
   const searchParams = useSearchParams();
   const search = searchParams.get("id");
  const [totalCount, setTotalCount] = useState(null)
+ const [loading, setLoading] = useState(true);
  const [error, setError] = useState('')
-  const api = `http://185.103.129.113:80/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
+  const api = `http://192.168.3.17:80/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
   useEffect(() => {
+    setLoading(true);
     fetch(api)
       .then((response) => {
         if (!response.ok) {
@@ -48,7 +51,10 @@ function CatList() {
       })
       .catch((err) => {
         setError(err);
-      });
+      })
+      .finally(() => {
+        setLoading(false); // Set loading state to false after fetching data (success or error)
+      })
       AOS.init();
       AOS.refresh();
   }, [search ,currentPage]);
@@ -56,6 +62,10 @@ useEffect(() => {
   setCurrentPage(1);
 }, [search])
 
+
+if(loading){
+  return <> <p > درحال بارگزاری...</p> <Loading/></>;
+}
 
 return (
   <>

@@ -2312,6 +2312,12 @@ background: var(--pumpkin-300, #FFC86E);
     }
    }
    @media screen and (max-width: 768px) {
+    .dots{
+        width: 100%;
+    }
+    .breadcrumb-ul .breadcrumb-item{
+        font-size: 10px !important;
+    }
     .col-image-box img{
         width: 100%;
     }
@@ -2361,7 +2367,8 @@ background: var(--pumpkin-300, #FFC86E);
         padding:  0.5rem !important;
     }
     .breadcrumb-ul .breadcrumb-item{
-        padding: 0.5rem !important;
+        padding: 0px 5px !important;
+      
     }
     .singleThumbnail-box{
         padding-top: 60%;
@@ -2384,7 +2391,8 @@ background: var(--pumpkin-300, #FFC86E);
    }
    .breadcrumb-ul{
     margin-top: 2rem;
-    flex-direction: column;
+    align-items: baseline;
+
  }
  .contact-page .info .value,footer .contact .item .value{
     width: 70%;

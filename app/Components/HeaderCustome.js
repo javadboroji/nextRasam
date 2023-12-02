@@ -10,7 +10,7 @@ import DarkMod from "./DarkMod";
 
 export function Menus(){
   const fetcher = async () => {
-    const res = await fetch("http://185.103.129.113:80/api/v1/Category/GetCategories");
+    const res = await fetch("http://192.168.3.17:80/api/v1/Category/GetCategories");
     const { data } = await res.json();
     return data;
   };
@@ -23,7 +23,6 @@ export function Menus(){
 }
 
 const HeaderCustome = () => {
-  //const [data, setData] = useState("");
   
   const [dropDown, setDropDown] = useState(false);
   /**==============================================
@@ -48,7 +47,7 @@ const HeaderCustome = () => {
         className="navbar navbar-expand-lg header-bg  d-flex h-100"
         style={{ alignItems: dropDown ? "baseline" : "" }}
       >
-        <div className="container  d-flex align-items-baseline">
+        <div className="container-fluid container-xl  d-flex align-items-baseline">
           <Link className="navbar-brand" href="/">
             <Image src={logo} alt="Logo" />
             <span> رسام نقش آناهیتا</span>
@@ -71,12 +70,12 @@ const HeaderCustome = () => {
             } navbar-collapse justify-content-between align-items-center`}
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav  mb-2 mb-lg-0 me-5">
+            <ul className="navbar-nav  mb-2 mb-lg-0 me-xl-5">
               {data &&
                 data?.map((item, i) => {
                   return (
                     <li className={`nav-item custom ${item.subs&& 'sub-menu'} px-2`} key={item.id}>
-                      <Link className='nav-link menu-text' href={{pathname:"/categoryes" ,query:{id:item.id,catParent:item.id}}}>
+                      <Link className='nav-link menu-text' href={{pathname:"/categoryes" ,query:{id:item.id,catParent:item.id}}} onClick={()=>dropDown?drodownHandler():''}>
                         {item.title}
                       </Link>
                       {item.subs.length>0 && (

@@ -5,7 +5,7 @@ import cardThumbnail from '@/public/frame-1261154708@2x.png';
 import { use } from "react";
 
 const getSimilrData =async(id)=>{
-  const api =`http://185.103.129.113:80/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=1&pageSize=10&categoryId=${id}`
+  const api =`http://192.168.3.17:80/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=1&pageSize=10&categoryId=${id}`
 const res =await fetch(api,{cache: 'no-store' })
 if(!res.ok){
   throw new Error('Failed to fetch data lats Article')

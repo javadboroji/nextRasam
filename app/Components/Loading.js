@@ -2,7 +2,7 @@ import React from "react";
 
 function Loading() {
   return (
-    <div className="loading-bg">
+    <div className="d-flex justify-content-center">
       <div class="dots">
         <div class="dot"></div>
         <div class="dot"></div>
