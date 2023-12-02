@@ -35,7 +35,7 @@ function CatList() {
  const [totalCount, setTotalCount] = useState(null)
  const [loading, setLoading] = useState(true);
  const [error, setError] = useState('')
-  const api = `http://192.168.3.17:80/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
+  const api = `http://185.103.129.113:80/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
   useEffect(() => {
     setLoading(true);
     fetch(api)

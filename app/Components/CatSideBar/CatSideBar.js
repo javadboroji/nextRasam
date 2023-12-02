@@ -14,7 +14,7 @@ function CatSideBar() {
   const catParent = searchparams.get("catParent");
   const id = searchparams.get("id");
 
-  const api = `http://192.168.3.17:80/api/v1/Category/GetCategoriesByName?categoryId=${catParent}`;
+  const api = `http://185.103.129.113:80/api/v1/Category/GetCategoriesByName?categoryId=${catParent}`;
 
   useEffect(() => {
     fetch(api)
