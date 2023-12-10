@@ -7,6 +7,7 @@ const BreadcrumbCustom =dynamic(()=>import("@/app/Components/BreadcrumbCustom"),
 import GhallerySwiper from "./GhallerySwiper";
 import LayoutPage from "../Components/LayoutPage";
 import BannerHome from "../Components/BannerHome";
+import FavButton from "../Components/FavButton";
 export const metadata  = {
   title: 'گالری تصاویر',
   description: 'گالری تصاویر',
@@ -24,6 +25,7 @@ function Ghallery() {
 
         </div>
       </div>
+      <FavButton/> 
       </LayoutPage>
   );
 }

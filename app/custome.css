@@ -136,7 +136,7 @@ right: 0;
     color: var(--text-black);
 text-align: justify;
 font-family: 'IRANSans(FaNum)';
-font-size: 16px;
+font-size: 18px;
 font-style: normal;
 font-weight: 500;
 }
@@ -617,7 +617,7 @@ padding: 1rem 0;
     border-radius: 0.8rem;
     position: relative;
     overflow: hidden;
-    width: 12rem;
+    width: 9rem;
     height: 100%;
     transition: ease-in-out 0.3s all;
 }
@@ -638,9 +638,9 @@ padding: 1rem 0;
     margin-top: 2rem;
 }
 .swiper-box .swiper-slide {
-    width: 16% !important;
+    width: 12% !important;
     padding: 1rem 0;
-    height: 12rem;
+    height: 10rem;
 }
 .mySwiper.ourTool .swiper-slide:hover .our-tool-img-box{
     transform: scale(0.9);
@@ -663,6 +663,10 @@ padding: 1rem 0;
  *  
  *  
  *=============================================**/
+ .swiper-pagination-bullet-active{
+    width: 12px;
+    height: 12px;
+ }
  .baget-post{
     background: var(--blue-500);
     font-size: 10px;
@@ -2230,6 +2234,112 @@ background: var(--pumpkin-300, #FFC86E);
 
     cursor: pointer;
  }
+ /**==============================================
+ *                FavButton
+ *  
+ *  
+ *  
+ *  
+ *=============================================**/
+
+ .fav-button{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #191F3E;
+    position: fixed;
+    right: 10px;
+    bottom: 10%;
+    z-index: 99;
+    box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.5);
+ }
+ body.dark-mode  .fav-button,body.dark-mode  .fav-button{
+    background: var(--blue-500);
+    box-shadow: 0px 0px 16px 0px rgba(97, 97, 97, 0.5);
+ }
+.fav-button-text{
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: var(--gray-500);
+        text-align: right;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 700;
+}
+.chat-fav-button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.fav-button-btn{
+    background: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.fav-button-box{
+    width: 232px;
+    height: 205px;
+    background: var(--blue-50);
+    position: fixed;
+    right: 1.5rem;
+    bottom: 15%;
+    z-index: 99;
+    border-radius: 8px;
+
+}
+.fav-button-box::after{
+    content: '';
+    position: absolute;
+    top: 97%;
+    right: 4px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 20px;
+}
+.fav-button-box .header{
+    background: var(--text-black);
+    border-radius: 8px;
+}
+.fav-button-box .header p{
+    color: var(--color-fff);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0.5rem 0;
+    text-align: center;
+}
+.fav-button-item{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem 6px;
+}
+.fav-button-item span{
+    color: var(--color-black, #000);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.fav-button-item button{
+    background: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
+    transition: ease-in-out 0.3s all;
+}
+.fav-button-item button:hover{
+    background: #F6F9FF;
+    transition: ease-in-out 0.3s all;
+}
   /**==============================================
    *                Media Query
    *  
@@ -2239,7 +2349,7 @@ background: var(--pumpkin-300, #FFC86E);
    *=============================================**/
    @media screen and (max-width: 1400px) {
     .swiper-box .swiper-slide{
-        width: 20% !important;
+        width: 14% !important;
     }
     .about-thumbnail{
         min-height: 29rem;
@@ -2254,6 +2364,9 @@ background: var(--pumpkin-300, #FFC86E);
     }
    }
    @media screen and (max-width: 1200px){
+    .swiper-box .swiper-slide{
+        width: 16% !important;
+    }
     .about-thumbnail{
         min-height: 29rem;
     } 
@@ -2283,9 +2396,9 @@ background: var(--pumpkin-300, #FFC86E);
         justify-content: center;
     }
     .swiper-box .swiper-slide {
-        width: 35% !important;
+        width: 20% !important;
         padding: 2rem 0;
-        height: 15rem;
+        height: 12rem;
     }
     .banner-main{
         min-height: 40rem;
@@ -2379,7 +2492,8 @@ background: var(--pumpkin-300, #FFC86E);
         width: 100%;
     }
     .swiper-box .swiper-slide{
-        width: 45% !important;
+        width: 33% !important;
+        height: 14rem;
     }
     .navbar-brand img{
         width: 25%;
@@ -2575,6 +2689,9 @@ background: var(--pumpkin-300, #FFC86E);
      }
    }
    @media screen and (max-width: 420px) {
+    .swiper-box .swiper-slide{
+        width: 40% !important;
+    }
     .circle-1 {
         top: 45%;
     }

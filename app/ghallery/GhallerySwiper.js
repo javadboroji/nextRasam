@@ -55,7 +55,7 @@ function GhallerySwiper() {
           {data?.map((image, i) => {
             return (
               <div className=" box-ghallery" key={i}>
-                <Link href={`http://192.168.3.17:82/posters/DSC08216.jpg`}   >
+                <Link href={`${baseUrl}/${image.url}`}   >
                   <img
                   
                     src={`${baseUrl}/${image.url}`}

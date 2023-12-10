@@ -23,7 +23,7 @@ export default function Home() {
       <Property />
       <OurTool />
       <LatestArticles />
-      {/* <FavButton/> */}
+       <FavButton/> 
       <FooterCustom />
     </main>
   );

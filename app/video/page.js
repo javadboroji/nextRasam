@@ -3,6 +3,7 @@ import LayoutPage from '../Components/LayoutPage'
 import '@/app/custome.css'
 import VideoList from '../Components/VideoList/VideoList'
 import BreadcrumbCustom from '../Components/BreadcrumbCustom'
+import FavButton from '../Components/FavButton'
 export const metadata  = {
   title: 'ویدیو',
   description: 'ویدیو',
@@ -14,6 +15,7 @@ function page() {
         <div className='video-content'>
           <VideoList/>
         </div>
+        <FavButton/> 
     </LayoutPage>
   )
 }

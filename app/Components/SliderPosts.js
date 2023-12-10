@@ -33,13 +33,13 @@ function SliderPosts({ posts, categorey, similr, notShowPost }) {
             slidesPerView: 4,
           },
         }}
-        spaceBetween={10}
+        spaceBetween={15}
         slidesPerView={1}
         modules={[Navigation, Autoplay, Pagination]}
         className="mySwiper last-article swiper-custome"
         navigation
         pagination={true}
-        style={{ paddingBottom: "2rem" }}
+        style={{ paddingBottom: "3rem" }}
       >
         {posts.data &&
           posts.data.map((item) => {

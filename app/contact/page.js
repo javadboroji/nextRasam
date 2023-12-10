@@ -19,6 +19,7 @@ import mailBox from "@/public/Mailbox.svg";
 import mail from "@/public/Mail.svg";
 import Image from "next/image";
 import LayoutPage from "../Components/LayoutPage";
+import FavButton from "../Components/FavButton";
 export const metadata  = {
   title: 'تماس با ما',
   description: 'صفحه تماس با ما',
@@ -123,6 +124,7 @@ function Contact() {
           </div>
         </div>
       </LayoutPage>
+       <FavButton/> 
     </>
   );
 }
