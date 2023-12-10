@@ -1,11 +1,12 @@
 import React from "react";
 import "swiper/css";
 import "swiper/css/navigation";
-
+import { BASE_URL } from "@/app/envIndex";
 import "swiper/css/pagination";
 import SliderPosts from "./SliderPosts";
 const getLastArticle =async()=>{
-  const api ='http://webapp.rasamflexo.ir/api/v1/Articles/GetLatestArticles'
+  const baseUrl = BASE_URL;
+  const api =`${baseUrl}/api/v1/Articles/GetLatestArticles`
   const res =await fetch(api,{cache: 'no-store' })
   if(!res.ok){
     throw new Error('Failed to fetch data lats Article')

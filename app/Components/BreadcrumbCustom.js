@@ -6,13 +6,14 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import arrow from "@/public/Arrow, left.svg";
 import Image from "next/image";
-
+import { BASE_URL } from "@/app/envIndex";
 function BreadcrumbCustom({ title }) {
   const searchParams = useSearchParams();
+  const baseUrl = BASE_URL;
   const router = useRouter();
   const paths = usePathname();
   const pathNames = paths.split("/").filter((path) => path);
-  const api = `http://webapp.rasamflexo.ir/api/v1/Category/GetBreadCrumbByCategory?articleId=${pathNames[1]}`;
+  const api = `${baseUrl}/api/v1/Category/GetBreadCrumbByCategory?articleId=${pathNames[1]}`;
   const [error, setError] = useState(null);
   const [breadcrumbCat, setBreadcrumbCat] = useState([]);
 

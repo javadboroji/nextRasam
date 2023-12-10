@@ -68,7 +68,6 @@ body.dark-mode .navbar-toggler-icon{
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 20px );
     -webkit-backdrop-filter: blur( 20px );
-    border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 
 }
@@ -77,7 +76,6 @@ body.dark-mode .navbar-toggler-icon{
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
 backdrop-filter: blur( 20px );
 -webkit-backdrop-filter: blur( 20px );
-border-radius: 10px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 .nav-item.sub-menu .dropdown-menu{
@@ -206,7 +204,7 @@ animation-name: focus-in-contract;
     color:#fff;
     text-align: right;
 font-family: 'IRANSans(FaNum)';
-font-size: 24px;
+font-size: 16px;
 font-style: normal;
 font-weight: 500;
 line-height: 40px; /* 166.667% */
@@ -1372,13 +1370,15 @@ text-decoration: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    grid-gap: 5px;
+    grid-gap: 16px;
  }
  .box-ghallery{
     min-height: 15rem;
  }
 .box-ghallery {
     grid-area:span 3;
+    position: relative;
+    overflow: hidden;
   
   }
   .box-ghallery:nth-child(even) {
@@ -1437,7 +1437,21 @@ background: transparent;
     width: 30% !important;
     height: 300px;
   }
-  
+  .ghallery-slide-image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    
+  }
+  .ghallery-slide-image:hover {
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+    width: 150%;
+  }
 /**==============================================
  *                Categorey
  *  
@@ -2407,8 +2421,12 @@ background: var(--pumpkin-300, #FFC86E);
  .contact-page .info .value,footer .contact .item .value{
     width: 70%;
  }
+ .banner-content .description{
+    font-size: 14px;
+    line-height: 36px;
+ }
  .banner-content .title{
-    font-size: 2rem;
+    font-size: 28px;
     text-align: center;
     padding-top: 4rem;
     }
@@ -2416,14 +2434,18 @@ background: var(--pumpkin-300, #FFC86E);
     {
     font-size: 20px;
     text-align: center;
+    padding: 1rem 0;
     }
     .advantage .title{
         font-size: 1rem;
         text-align: center;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 0;
     }
     .article-card-info{
-        height: 16rem;
+        height: 14rem;
+    }
+    .last-article .thumbnail, .category .thumbnail, .favorites .thumbnail{
+        padding-top: 65%;
     }
     .whay-title{
         font-size: 1.5rem;
@@ -2435,7 +2457,7 @@ background: var(--pumpkin-300, #FFC86E);
         font-size: 1.2rem;
     }
     .whay-description, .description,  .property-card .title{
-        font-size: 1rem;
+        font-size: 14px;
     }
     .property-title{
         text-align: center;
@@ -2446,12 +2468,18 @@ background: var(--pumpkin-300, #FFC86E);
   
     .last-article .description, .category .description, .favorites .description{
         font-size: 0.7rem;
+        -webkit-line-clamp: 2;
     }
     .card-advantage .counter{
-        padding-top: 0.5rem;
+        padding-top: 1rem;
+        font-size: 38px;
     }
     .card-advantage{
-        height: 16rem;
+        height: 15rem;
+    }
+    .our-tool-img-box{
+        width: 9rem;
+        height: 65%;
     }
     .our-tool {
         padding: 1rem 0;
@@ -2539,13 +2567,16 @@ background: var(--pumpkin-300, #FFC86E);
         width: 80%;
         right: 10px;
      }
+     .our-tool .description{
+        margin-bottom: 0;
+     }
+     .nav-item{
+        margin: .7rem 0;
+     }
    }
    @media screen and (max-width: 420px) {
     .circle-1 {
         top: 45%;
-    }
-    .swiper-box .swiper-slide {
-        width: 65% !important;
     }
     .breadcrumb-item{
         width: fit-content;
@@ -2650,4 +2681,67 @@ background: var(--pumpkin-300, #FFC86E);
     animation-name: change;
     animation-duration: 1s;
     animation-direction: alternate;
+  }
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+    background: #fff;
+  }
+  
+  .checkbox-label {
+    background-color: #0e64d1;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+  }
+  
+  /*  Support me if you like it */
+  .support {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+  }
+  
+  .support a {
+    color: #292c35;
+    font-size: 32px;
+    backface-visibility: hidden;
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  
+  .support a:hover{
+    transform: scale(1.1);
+  }
+  .sun,.moon{
+      position: absolute;
+      z-index: 99;
+  }
+  .sun{
+      right: 5px;
+  }
+  .moon{
+      left: 5px;
   }

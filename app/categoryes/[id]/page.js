@@ -11,6 +11,7 @@ import ImageBas64 from "@/app/Components/ImageBas64/ImageBas64";
 import CommentList from "@/app/Components/CommentList/CommentList";
 import DarkMod from "@/app/Components/DarkMod";
 import LayoutPage from "@/app/Components/LayoutPage";
+import { BASE_URL } from "@/app/envIndex";
 const BreadcrumbCustom = dynamic(
   () => import("@/app/Components/BreadcrumbCustom"),
   { ssr: false }
@@ -20,7 +21,8 @@ const Comments = dynamic(() => import("@/app/Components/Comments"), {
 });
 
 const getSigleData = async (id) => {
-  const api = `http://webapp.rasamflexo.ir/api/v1/Articles/GetArticleDetails?articleId=${id}`;
+  const baseUrl = BASE_URL;
+  const api = `${baseUrl}/api/v1/Articles/GetArticleDetails?articleId=${id}`;
   const res = await fetch(api, { cache: "no-store" });
   if (!res.ok) {
     throw new Error("Failed to fetch data lats Article");

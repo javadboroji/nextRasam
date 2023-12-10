@@ -6,11 +6,12 @@ import logo from "@/public/LogoSite.svg";
 import Link from "next/link";
 import useSWR from 'swr'
 import DarkMod from "./DarkMod";
-
+import { BASE_URL } from "@/app/envIndex";
 
 export function Menus(){
   const fetcher = async () => {
-    const res = await fetch("http://webapp.rasamflexo.ir/api/v1/Category/GetCategories");
+    const baseUrl = BASE_URL;
+    const res = await fetch(`${baseUrl}/api/v1/Category/GetCategories`);
     const { data } = await res.json();
     return data;
   };

@@ -44,11 +44,11 @@ function Advantages() {
           {" "}
           بهترین کیفیت مطابق دانش روز دنیا را از ما بخواهید!
         </h4>
-        <div className="row" data-aos="fade-down">
-          <div className="col-12 col-md-6 col-xl-3 mb-3 mb-xl-0">
+        <div className="row d-flex justify-content-center" data-aos="fade-down">
+          <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
             <div className="d-flex flex-column align-items-center card-advantage">
               <div className="icon">
-                <Image src={Line} alt="icon" />
+                <Image src={Line} alt="icon" width={32} height={32}/>
               </div>
               <div className="counter">
                 {" "}
@@ -60,7 +60,7 @@ function Advantages() {
               </span>
             </div>
           </div>
-          <div className="col-12 col-md-6 col-xl-3 mb-3 mb-xl-0">
+          <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
             <div className="d-flex flex-column align-items-center card-advantage">
               <div className="icon">
                 <Image src={Lazer} alt="icon" />
@@ -72,7 +72,7 @@ function Advantages() {
               <span className="title"> خط تولید لیزری </span>
             </div>
           </div>
-          <div className="col-12 col-md-6 col-xl-3 mb-3 mb-xl-0">
+          <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
             <div className="d-flex flex-column align-items-center card-advantage">
               <div className="icon">
                 <Image src={users} alt="icon" />
@@ -84,7 +84,7 @@ function Advantages() {
               <span className="title">   مشتری فعال </span>
             </div>
           </div>
-          <div className="col-12 col-md-6 col-xl-3 mb-3 mb-xl-0">
+          <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
             <div className="d-flex flex-column align-items-center card-advantage">
               <div className="icon">
                 <Image src={Mod} alt="icon" />

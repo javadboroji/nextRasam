@@ -43,14 +43,13 @@ function OurTool() {
               disableOnInteraction: false,
               stopOnLastSlide: false,
             }}
-            modules={[Navigation, Autoplay]}
+            modules={[Navigation,Autoplay]}
             className="mySwiper ourTool"
           >
             {list &&
               list.map((item, i) => {
                 return (
                   <SwiperSlide key={i}>
-                    <div className="slider-parent">
                       <div className="our-tool-img-box">
                         <Image
                           src={item}
@@ -59,7 +58,6 @@ function OurTool() {
                           alt="image"
                         />
                       </div>
-                    </div>
                   </SwiperSlide>
                 );
               })}

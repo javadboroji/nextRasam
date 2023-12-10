@@ -63,8 +63,8 @@ function Property() {
     <div className="advantage">
       <div className="container">
         <h3 className="property-title whay-title">ویژگی های ما</h3>
-        <div className="row  gy-3">
-          {list &&
+        <div className="row d-flex justify-content-center gy-3">
+          {list && 
             list.map((item) => {
               return (
                 <div key={item.id} className="col-12 col-lg-6">

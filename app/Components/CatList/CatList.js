@@ -10,6 +10,7 @@ import ImageBas64 from "@/app/Components/ImageBas64/ImageBas64";
 import PagenatinCustom from "../PagenatinCustom/PagenatinCustom";
 import AOS from "aos";
 import Loading from "../Loading";
+import { BASE_URL } from "@/app/envIndex";
 function CatList() {
 
 /**==============================================
@@ -35,7 +36,8 @@ function CatList() {
  const [totalCount, setTotalCount] = useState(null)
  const [loading, setLoading] = useState(true);
  const [error, setError] = useState('')
-  const api = `http://webapp.rasamflexo.ir/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
+ const baseUrl = BASE_URL;
+  const api = `${baseUrl}/api/v1/Articles/GetArticleInCategoryAndTag?pageIndex=${currentPage}&pageSize=${itemsPerPage}&categoryId=${search}`;
   useEffect(() => {
     setLoading(true);
     fetch(api)

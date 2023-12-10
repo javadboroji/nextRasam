@@ -1,94 +1,74 @@
 "use client";
-import React from "react";
-import cardThumbnail from "@/public/frame-1261154708@2x.png";
-import img1 from "@/public/img1.png"
-import img2 from "@/public/img2.png"
-import img3 from "@/public/img3.png"
-import img4 from "@/public/img4.png"
-import img7 from "@/public/img7.png"
-import img6 from "@/public/img1.png"
-import img8 from "@/public/img8.png"
-import img9 from "@/public/img9.png"
-
-import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  Navigation,
-  EffectCoverflow,
-  Autoplay,
-  Pagination,
-} from "swiper/modules";
+import React, { useEffect, useState } from "react";
+import useSWR from "swr";
 import "swiper/css";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { BASE_URL } from "@/app/envIndex";
+import Loading from "../Components/Loading";
+import LightGallery from "lightgallery/react";
+import lgZoom from "lightgallery/plugins/zoom";
+import lgVideo from "lightgallery/plugins/video";
+import "lightgallery/css/lightgallery.css";
+import "lightgallery/css/lg-zoom.css";
+import "lightgallery/css/lg-thumbnail.css";
+import Link from "next/link";
+import Image from "next/image";
 
+export function Ghallery() {
+  const baseUrl = BASE_URL;
+  const api = `${baseUrl}/api/v1/Image/GetAllImage`;
+  const fetcher = async () => {
+    const res = await fetch(api);
+    const { data } = await res.json();
+    return data.rows;
+  };
+  const { data, error } = useSWR("ghallery", fetcher, {
+    revalidateOnFocus: false,
+  });
+  return {
+    data,
+    error,
+    isLoading: !data && !error,
+  };
+}
 function GhallerySwiper() {
+  const baseUrl = BASE_URL;
+  const { data, isLoading, error } = Ghallery();
+  const bannerImage = data ? data[0].url : "";
+  const onInit = () => {
+    console.log('lightGallery has been initialized');
+};
+  if (isLoading) {
+    return (
+      <div className="pb-5">
+        {" "}
+        <Loading />{" "}
+      </div>
+    );
+  }
+  if (error) {
+    return <p>خطایی رخ داده است .!</p>;
+  }
   return (
     <>
-
-
       <div className="ghallery-grid">
-        <div className=" box-ghallery">
-         
-            <Image
-                  src={cardThumbnail}
-                  alt="image"
-                  style={{ objectFit: "cover",width:'100%',height:"100%" }}
-                  className="ghallery-slide-image"
-                />
-          
-        </div>
-        <div className=" box-ghallery">
-
-            <Image
-                  src={img2}
-                  alt="image"
-                  style={{ objectFit: "cover",width:'100%',height:"100%" }}
-                  className="ghallery-slide-image"
-                />
-        </div>
-        <div className=" box-ghallery">
-            <Image
-                  src={img1}
-                  alt="image"
-                  style={{ objectFit: "cover",width:'100%',height:"100%" }}
-                  className="ghallery-slide-image"
-                />
-        </div>
-        <div className=" box-ghallery">
-            <Image
-                  src={img9}
-                  alt="image"
-                  style={{ objectFit: "cover",width:'100%',height:"100%" }}
-                  className="ghallery-slide-image"
-                />
-        </div>
-        <div className=" box-ghallery">
-            <Image
-                  src={img8}
-                  alt="image"
-                  style={{ objectFit: "cover",width:'100%',height:"100%" }}
-                  className="ghallery-slide-image"
-                />
-        </div>
-        <div className=" box-ghallery">
-            <Image
-                  src={img7}
-                  alt="image"
-                  style={{ objectFit: "cover",width:'100%',height:"100%" }}
-                  className="ghallery-slide-image"
-                />
-        </div>
-        <div className=" box-ghallery">
-            <Image
-                  src={img6}
-                  alt="image"
-                  style={{ objectFit: "cover",width:'100%',height:"100%" }}
-                  className="ghallery-slide-image"
-                />
-        </div>
-   
+       
+          {data?.map((image, i) => {
+            return (
+              <div className=" box-ghallery" key={i}>
+                <Link href={`http://192.168.3.17:82/posters/DSC08216.jpg`}   >
+                  <img
+                  
+                    src={`${baseUrl}/${image.url}`}
+                    alt={'image.url'}
+                    className="ghallery-slide-image"
+                  />
+                </Link>
+              </div>
+            );
+          })}
       </div>
     </>
   );

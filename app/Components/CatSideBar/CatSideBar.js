@@ -7,14 +7,14 @@ import search from "@/public/search-loupe.svg";
 import { useSearchParams } from "next/navigation";
 import AOS from "aos";
 import InputSearch from "./InputSearch";
-
+import { BASE_URL } from "@/app/envIndex";
 function CatSideBar() {
   const [data, setData] = useState("");
   const searchparams = useSearchParams();
   const catParent = searchparams.get("catParent");
   const id = searchparams.get("id");
-
-  const api = `http://webapp.rasamflexo.ir/api/v1/Category/GetCategoriesByName?categoryId=${catParent}`;
+  const baseUrl = BASE_URL;
+  const api = `${baseUrl}/api/v1/Category/GetCategoriesByName?categoryId=${catParent}`;
 
   useEffect(() => {
     fetch(api)
