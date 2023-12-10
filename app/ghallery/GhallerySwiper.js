@@ -36,10 +36,7 @@ export function Ghallery() {
 function GhallerySwiper() {
   const baseUrl = BASE_URL;
   const { data, isLoading, error } = Ghallery();
-  const bannerImage = data ? data[0].url : "";
-  const onInit = () => {
-    console.log('lightGallery has been initialized');
-};
+
   if (isLoading) {
     return (
       <div className="pb-5">

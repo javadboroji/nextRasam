@@ -1,2 +1,2 @@
-const BASE_URL='http://192.168.3.17:82'
+const BASE_URL='http://webapp.rasamflexo.ir'
 export{BASE_URL}
