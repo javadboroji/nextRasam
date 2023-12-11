@@ -1,105 +1,65 @@
-'use client'
 import Image from "next/image";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useRef,useEffect } from "react";
-import { useInView } from 'react-intersection-observer';
-import { useCountUp } from 'react-countup';
-import Line from "@/public/line.svg";
-import Mod from "@/public/mod.svg";
-import users from "@/public/users.svg";
-import Lazer from "@/public/lazer.svg";
+import { BASE_URL } from "@/app/envIndex";
+import books from "@/public/bookss.svg"
+import book from "@/public/book.svg"
+import education from "@/public/education.svg"
+import customer from "@/public/customer.svg"
+const  GetCountCards=async()=> {
+  const baseUrl = BASE_URL;
+  const api = `${baseUrl}/api/v1/Articles/CategoriesOfArticlesCount`;
+  const res =await fetch(api,{cache: 'no-store' })
+  if(!res.ok){
+    console.log('Failed to fetch data lats CategoriesOfArticlesCount')
+  }
+  return res.json()
+}
 
-function Advantages() {
-  const [ref, inView] = useInView();
-  const countUpRefOne = useRef(null);
-  const countUpRefTwo = useRef(null);
-  const countUpRefThree = useRef(null);
-  const countUpRefFour = useRef(null);
-
-  const { start: startCountOne } = useCountUp({ start: 0, end: 17, ref: countUpRefOne ,duration:10});
-  const { start: startCountTwo } = useCountUp({ start: 0, end: 2, ref: countUpRefTwo ,duration:10});
-  const { start: startCountThree } = useCountUp({ start: 0, end: 300, ref: countUpRefThree,duration:10 });
-  const { start: startCountFour } = useCountUp({ start: 0, end: 3, ref: countUpRefFour ,duration:10});
-
-  useEffect(() => {
-    if (countUpRefOne.current && inView) {
-      startCountOne();
-    }
-    if (countUpRefTwo.current && inView) {
-      startCountTwo();
-    }
-    if (countUpRefThree.current && inView) {
-      startCountThree();
-    }
-    if (countUpRefFour.current && inView) {
-      startCountFour();
-    }
-  }, [inView]);
+async function Advantages() {
+  let data=null
+  data= await GetCountCards();
+  if(data){
+    return (
+      <div className="advantage">
+        <div className="container">
+          <h4 className="title">
+            {" "}
+            بهترین کیفیت مطابق دانش روز دنیا را از ما بخواهید!
+          </h4>
+          <div className="row d-flex justify-content-center" data-aos="fade-down">
+            {data.data &&
+              data.data.map((item, i) => (
+                <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
+                  <div className="d-flex flex-column align-items-center card-advantage">
+                    <div className="icon">
+                       <Image src={item.row===1 ?book:item.row===2?books:item.row===3?education:customer} alt="icon" width={32} height={32} /> 
+                    </div>
+                    <div className="counter">
+                    
+                     {item.row===4? '+' :''}
+                      <span id="counters-17" >
+                        {" "}
+                        {item.categoryCount}
+                      </span>
+                    </div>
+                    <span className="title">
+                      {item.categoryName}
+                    </span>
+                  </div>
+                </div>
+              ))}
   
-  return (
-    <div className="advantage" ref={ref}>
-      <div className="container">
-        <h4 className="title">
-          {" "}
-          بهترین کیفیت مطابق دانش روز دنیا را از ما بخواهید!
-        </h4>
-        <div className="row d-flex justify-content-center" data-aos="fade-down">
-          <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
-            <div className="d-flex flex-column align-items-center card-advantage">
-              <div className="icon">
-                <Image src={Line} alt="icon" width={32} height={32}/>
-              </div>
-              <div className="counter">
-                {" "}
-                + <span id="counters-17"  ref={countUpRefOne}> {countUpRefOne.current && countUpRefOne.current.countUp}</span>
-              </div>
-              <span className="title">
-                {" "}
-                سال تخصص و تجربه در زمینه طراحی و تولید کلیشه
-              </span>
-            </div>
-          </div>
-          <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
-            <div className="d-flex flex-column align-items-center card-advantage">
-              <div className="icon">
-                <Image src={Lazer} alt="icon" />
-              </div>
-              <div className="counter">
-                {" "}
-                + <span id="counters-17"  ref={countUpRefTwo}> {countUpRefTwo.current && countUpRefTwo.current.countUp}</span>
-              </div>
-              <span className="title"> خط تولید لیزری </span>
-            </div>
-          </div>
-          <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
-            <div className="d-flex flex-column align-items-center card-advantage">
-              <div className="icon">
-                <Image src={users} alt="icon" />
-              </div>
-              <div className="counter">
-                {" "}
-                + <span id="counters-12" ref={countUpRefThree}> {countUpRefThree.current && countUpRefThree.current.countUp}</span>
-              </div>
-              <span className="title">   مشتری فعال </span>
-            </div>
-          </div>
-          <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
-            <div className="d-flex flex-column align-items-center card-advantage">
-              <div className="icon">
-                <Image src={Mod} alt="icon" />
-              </div>
-              <div className="counter">
-                {" "}
-                + <span id="counters-3" ref={countUpRefFour}>{countUpRefFour.current && countUpRefFour.current.countUp}</span>
-              </div>
-              <span className="title"> خط تولید آنالوگ </span>
-            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }else{
+    return(
+      <p> مشکلی پیش آمده است!!</p>
+    )
+  }
+  
 }
 
 export default Advantages;

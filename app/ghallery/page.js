@@ -15,14 +15,13 @@ export const metadata  = {
 function Ghallery() {
   return (
       <LayoutPage>
-      <div className="ghallery">
+         {/* <div className="ghallery-banner"> </div> */}
+          <div className="ghallery">
         <BreadcrumbCustom />
         <div className="container">
           <div className="breadcrumb"></div>
           <h1> گالری تصاویر</h1>
-      
           <GhallerySwiper />
-
         </div>
       </div>
       <FavButton/> 

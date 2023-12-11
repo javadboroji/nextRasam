@@ -50,6 +50,7 @@ function GhallerySwiper() {
   }
   return (
     <>
+   
       <div className="ghallery-grid">
        
           {data?.map((image, i) => {

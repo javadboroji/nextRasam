@@ -143,21 +143,21 @@ font-weight: 500;
 .nav-item.custom:hover a{
     color: var(--blue-500);
 }
-.banner-main::after{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
+/* .banner-main{
+    position: relative;
     width: 100%;
     height: 100%;
-    z-index: -2;
+    z-index: 1;
     min-height: 20rem;
-    background: url(../public/banner-bg.svg);
+    background-image:url(../public/banner-bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+} */
+.slider-banner{
+    padding: 2rem;
 }
-.banner-main::before {
+/* .banner-content::before {
     content: "";
     position: absolute;
     top: 0;
@@ -165,7 +165,48 @@ font-weight: 500;
     width: 100%;
     height: 100%;
     background: linear-gradient(204deg, rgba(0, 9, 27, 0.60) 4.03%, rgba(1, 4, 12, 0.60) 124.2%);
-    z-index: -1;
+    z-index: -2;
+}  */
+.banner-image-slider{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.banner-content{
+    width: 100%;
+    overflow: hidden;
+    height: 90svh !important;
+    position: relative;
+    z-index: 1;
+    
+}
+.swiper-banner{
+    height: 100%;
+    width: 100%;
+}
+.slider-banner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url(../public/banner-bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.slider-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(204deg, rgba(0, 9, 27, 0.60) 4.03%, rgba(1, 4, 12, 0.60) 124.2%);
+    z-index: -2;
+} 
+
+.slider-banner.slide-2::before{
+    display: none;
 }
 .banner-content .title{
 color:#fff;
@@ -455,13 +496,13 @@ line-height: 32px; /* 200% */
   .property-card .description{
     text-align: center;
   }
-  .col-image-box{
+  /* .col-image-box{
     background: url('../public/Vector.svg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
   
-  }
+  } */
   @keyframes customAni {
     0%,
     100% {
@@ -708,9 +749,9 @@ padding: 1rem 0;
 .last-article .description ,.category .description ,.favorites .description{
     overflow: hidden;
     display: -webkit-box; 
-    -webkit-line-clamp: 1;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    font-size: 0.9rem;
+    font-size: 12px;
 }
 .last-article .date ,.category .date ,.favorites .date{
     color: var(--pumpkin-600);
@@ -1370,6 +1411,35 @@ text-decoration: none;
 /**==============================================
  *              Ghallery
  *=============================================**/
+ .ghallery-banner{
+    position: relative;
+    min-height: 45rem;
+    z-index: 1;
+ }
+ .ghallery-banner::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-image: url(../public/New\ Project.jpg);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+ }
+ .ghallery-banner::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+   background: #000;
+   opacity: 0.3;
+ }
  .ghallery-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
