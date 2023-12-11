@@ -820,7 +820,7 @@ width: fit-content;
     border-radius: 12px;
 }
 body.dark-mode .category.article-card{
-    border: 1px solid #262c40;
+    border: 1px solid #979797;
 }
 .singleThumbnail-box{
     position: relative;
@@ -2304,6 +2304,9 @@ background: var(--pumpkin-300, #FFC86E);
 
     cursor: pointer;
  }
+ body.dark-mode  .video-hover{
+    box-shadow: 0 5px 11px rgba(167, 167, 167, 0.425);
+ }
  /**==============================================
  *                FavButton
  *  
@@ -2519,6 +2522,9 @@ background: var(--pumpkin-300, #FFC86E);
     }
    }
    @media screen and (max-width: 768px) {
+    .category-cat p{
+        font-size: 20px;
+    }
     .dots{
         width: 100%;
     }
@@ -2745,7 +2751,7 @@ background: var(--pumpkin-300, #FFC86E);
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(1, 1fr);
-        grid-gap: 5px;
+        grid-gap: 16px;
      }
      .chat{
         width: 80%;
