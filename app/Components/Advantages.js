@@ -30,7 +30,7 @@ async function Advantages() {
           <div className="row d-flex justify-content-center" data-aos="fade-down">
             {data.data &&
               data.data.map((item, i) => (
-                <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0">
+                <div className="col-10 col-md-6 col-xl-3 mb-3 mb-xl-0" key={i}>
                   <div className="d-flex flex-column align-items-center card-advantage">
                     <div className="icon">
                        <Image src={item.row===1 ?book:item.row===2?books:item.row===3?education:customer} alt="icon" width={32} height={32} /> 
