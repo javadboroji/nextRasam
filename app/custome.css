@@ -185,9 +185,9 @@ font-weight: 500;
     width: 100%;
 }
 .slider-banner{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
     background-image:url(../public/banner-bg.svg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -2528,12 +2528,12 @@ background: var(--pumpkin-300, #FFC86E);
     .col-image-box img{
         width: 100%;
     }
-    .col-image-box{
+    /* .col-image-box{
         background: url('../public/Vectormobile.svg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
-    }
+    } */
     .circle-1 .title{
         font-size: 1rem;
     }
@@ -2756,6 +2756,9 @@ background: var(--pumpkin-300, #FFC86E);
      }
      .nav-item{
         margin: .7rem 0;
+     }
+     .banner-content{
+        height: 100svh;
      }
    }
    @media screen and (max-width: 420px) {
