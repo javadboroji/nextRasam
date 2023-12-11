@@ -2525,6 +2525,9 @@ background: var(--pumpkin-300, #FFC86E);
     .category-cat p{
         font-size: 20px;
     }
+    .slider-banner {
+        padding: 1rem;
+    }
     .dots{
         width: 100%;
     }
@@ -2532,7 +2535,7 @@ background: var(--pumpkin-300, #FFC86E);
         font-size: 10px !important;
     }
     .col-image-box img{
-        width: 100%;
+        width: 80%;
     }
     /* .col-image-box{
         background: url('../public/Vectormobile.svg');
@@ -2585,7 +2588,8 @@ background: var(--pumpkin-300, #FFC86E);
       
     }
     .singleThumbnail-box{
-        padding-top: 60%;
+        padding-top: 75%;
+        margin-top: 1rem;
     }
    .whay-title{
     padding-bottom: 0;
@@ -2764,10 +2768,17 @@ background: var(--pumpkin-300, #FFC86E);
         margin: .7rem 0;
      }
      .banner-content{
-        height: 100svh;
+        height: 80svh !important;
      }
-   }
+     .breadcrumb-ul{
+        flex-wrap: wrap;
+    }
+    .single-title{
+        font-size: 18px;
+    }
+    }
    @media screen and (max-width: 420px) {
+  
     .swiper-box .swiper-slide{
         width: 40% !important;
     }
