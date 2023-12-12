@@ -86,6 +86,13 @@ function Contact() {
                       gradientUnits="userSpaceOnUse"
                     >
                       <stop stop-color="#0D2D6A" />
+                      <animate
+                    attributeName="x1"
+                    from="0%"
+                    to="100%"
+                    dur="1s"
+                    repeatCount="indefinite"
+                  />
                       <stop offset="1" stop-color="#3579FD" />
                       <animate
                         attributeName="x1"
@@ -181,7 +188,9 @@ function Contact() {
                       </div>
                       <div className="value mx-3">
                         <span> تلفن :</span>
-                        <span> 021-91092227 </span>
+                        <span> 91092227-021
+                          
+                           </span>
                       </div>
                     </div>
                     <div className="item d-flex">
