@@ -1190,6 +1190,60 @@ font-style: normal;
 font-weight: 500;
 line-height: 157%; /* 50.24px */
 }
+.svg-bg{
+    width:100%;
+     height:100%;
+    border-radius: 50%;
+    background: url(../public/bg-svg-about.png);
+  
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    overflow: hidden;
+}
+.svg-bg::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #a1a1a1;
+    opacity: .6;
+    z-index: -1;
+}
+.about-title{
+    color:  #1E6AFD;
+        text-align: center;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+line-height: 157%; /* 25.12px */
+width: 100%;
+display: flex;
+justify-content: center;
+margin: auto;
+text-align: center;
+}
+.about-companey{
+    color: #1E6AFD;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 157%; /* 37.68px */
+    display: flex;
+justify-content: center;
+margin: auto;
+text-align: center;
+}
 .circle-1 .company-name{
     color: #0D2D6A;
 text-align: justify;
@@ -1198,6 +1252,17 @@ font-size: 16px;
 font-style: normal;
 font-weight: 500;
 line-height: 157%; /* 25.12px */
+}
+.whay-title.about-title{
+    color: var(--text-black);
+    text-align: right;
+    font-family: "IRANSans(FaNum)";
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+    display: block;
+    width: 100%;
 }
 /* .circle-2{
     background: #fff;
@@ -1228,12 +1293,7 @@ line-height: 157%; /* 25.12px */
     transition: ease-in-out 0.3s all;
 
 } */
-/* .circle-3:hover{
-    transform: scaleX(1.1) scaleY(1.1) scaleZ(1.1) rotateX(8deg) rotateY(-15deg) rotateZ(0deg) translateX(4px) translateY(3px) translateZ(-8px) skewX(0deg) skewY(0deg);
-}
-.circle-3 img{
-    padding: 6px;
-} */
+
 .about-thumbnail img{
     /* position: absolute;
     top: 50%;
@@ -2524,6 +2584,11 @@ background: var(--pumpkin-300, #FFC86E);
     }
    }
    @media screen and (max-width: 768px) {
+    .about-svg-main{
+        width: 300px;
+        height: 300px;
+        margin: auto;
+    }
     .category-cat p{
         font-size: 20px;
     }
